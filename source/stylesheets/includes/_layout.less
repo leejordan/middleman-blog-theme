@@ -44,8 +44,16 @@
         position: fixed;
         left: 50%;
         margin-left: -((@container-width / 2) + (@container-padding * 2) + (@container-border / 2) + (@title-logo-height / 2));
-        // border: (@container-border / 2) solid @colour-brand-light;
     }
+}
+
+.intro-portrait {
+    .pull-right();
+    .img-responsive();
+    .hidden-xxs();
+    margin-top: -8em !important;
+    margin-left: 1em !important;
+    margin-bottom: 1em !important;
 }
 
 // Containers
@@ -72,11 +80,24 @@
     .inner-content-fix();
 }
 
+.container--alt {
+    max-width: (@container-width - (@container-padding * 2));
+    background-color: @colour-brand-light;
+
+    &:before {
+        left: -(@container-padding * 4);
+    }
+
+    @media (min-width: @reflex-sm) {
+        border-radius: @dimension-border-radius;
+    }
+}
+
 // Page sections
 .page-section {
     position: relative;
     display: block;
-    padding: (@container-padding * 3) 0;
+    padding: (@container-padding * 2) 0;
 }
 
 .page-section--header {

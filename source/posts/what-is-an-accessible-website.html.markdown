@@ -1,7 +1,7 @@
 ---
-title: Accessibility issues are user experience issues
-slug: accessibility-issues-are-user-experience-issues
-date: 2016-10-06
+title: What is an accessible website
+slug: what-is-an-accessible-website
+date: 2015-11-13
 tags: accessibility, css3, design, html5, javascript, ux
 ---
 

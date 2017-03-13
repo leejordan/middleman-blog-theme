@@ -1,0 +1,54 @@
+//
+// Buttons
+// ---
+
+.button {
+    .button-style();
+}
+
+.button--next,
+.button--prev {
+    .button-icon();
+    padding-top: @container-padding;
+    padding-bottom: @container-padding;
+
+    > img {
+        margin-top: @container-padding;
+        margin-bottom: @container-padding;
+    }
+
+    @media (max-width: @reflex-xxs-max) {
+        width: 100%;
+    }
+}
+
+.button--next {
+    &:after {
+        content: '\2192';
+        transform: translateX(0);
+        .font-size(2);
+    }
+
+    &:hover,
+    &:focus {
+        &:after {
+            transform: translateX(0.2em);
+        }
+    }
+}
+
+
+.button--prev {
+    &:before {
+        content: '\2190';
+        transform: translateX(0.2em);
+        .font-size(2);
+    }
+
+    &:hover,
+    &:focus {
+        &:before {
+            transform: translateX(0);
+        }
+    }
+}

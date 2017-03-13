@@ -9,6 +9,7 @@
         <% if current_page.path == 'index.html' %>
             <%= partial 'partials/intro' %>
         <% end %>
+        <%= partial 'partials/nav' %>
         <%= yield %>
         <%= partial 'partials/footer' %>
     </body>

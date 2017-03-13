@@ -9,7 +9,7 @@ small {
 h1, h2, h3, h4, h5, h6 {
     font-family: @font-family-sans-serif;
     font-weight: @font-weight-heading;
-    .margins(2, 0, 0.5, 0);
+    .margins(3, 0, 0.5, 0);
     line-height: @line-height-sm;
 }
 
@@ -52,20 +52,14 @@ blockquote {
     margin-top: 3em;
     padding-left: 2.5em;
     font-weight: @font-weight-weak;
-    color: @colour-brand;
+    color: lighten(@text-colour, 20%);
 
     &:before {
-        content: '"';
-        height: 3em;
-        width: 3em;
-        .font-size(3);
-        .position(absolute, -1.65em, ~'', ~'', 0);
-        .background-contain();
-        opacity: 0.2;
-    }
-
-    p {
+        content: '\201C';
         font-family: @font-family-serif;
+        .font-size(6);
+        .position(absolute, -.4em, ~'', 0, 0);
+        opacity: 0.2;
     }
 
     footer {
