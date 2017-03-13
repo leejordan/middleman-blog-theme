@@ -1,0 +1,59 @@
+//
+// Scaffolding
+// ---
+
+table {
+    width: 100%;
+    max-width: 100%;
+    background-color: @table-bg;
+    margin-bottom: @dimension-spacing-default;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: @dimension-padding-lg;
+                line-height: @line-height-base;
+                vertical-align: top;
+                border-top: @table-border;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    th {
+        text-align: left;
+        font-weight: @font-weight-strong;
+    }
+
+    tfoot {
+        .font-size(0.85);
+    }
+
+    // add bottom border to last row
+    > tbody:last-child {
+        > tr:last-child {
+            > th,
+            > td {
+                border-bottom: @table-border;
+            }
+        }
+    }
+
+    // Bottom align for column headings
+    > thead > tr > th {
+        vertical-align: bottom;
+    }
+
+    // Remove top border from thead
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+}

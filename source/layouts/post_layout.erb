@@ -1,0 +1,22 @@
+<% content_for(:title, current_article.title) %>
+<% content_for(:meta_desc, strip_tags(current_article.summary.to_s)) %>
+<% content_for(:meta_img, 'http://www.lendmeyourear.net/images/' + current_article.data.slug + '/cover.jpg') %>
+
+<!doctype html>
+<html>
+    <head>
+        <%= partial 'partials/layout-head' %>
+    </head>
+
+    <body ontouchstart="" class="<%= page_classes %>">
+        <%= partial 'partials/title' %>
+        <main class="page-section">
+            <div class="container container--post">
+                <%= image_tag("images/" + current_article.data.slug + "/cover.jpg", class: "img-bleed") %>
+                <h1><%= current_article.title  %></h1>
+                <%= yield %>
+            </div>
+        </main>
+        <%= partial 'partials/post-meta' %>
+    </body>
+</html>

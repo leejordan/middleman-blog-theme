@@ -1,0 +1,98 @@
+//
+// Colours
+// ---
+
+// Monochrome
+@colour-white:              #ffffff;
+@colour-black:              #000000;
+@colour-grey-dark:          #333333;
+@colour-grey:               #555555;
+@colour-grey-light:         #888888;
+@colour-grey-lighter:       #cccccc;
+@colour-grey-lightest:      #eeeeee;
+@colour-grey-hint:          #f8f8f8; // May be invisible on most poor quality screens but can be used as a subtle color hint
+
+// Brand colours
+@colour-brand:              #00b5e9;
+@colour-brand-light:        #f4f4f7;
+@colour-brand-hint:         lighten(@colour-brand, 40%);
+
+// UI colours
+@colour-accent:             @colour-brand;
+@colour-error:              #ab1818;
+
+//
+// Dimensions
+// ---
+
+// Spacing
+@dimension-spacing-default:     floor((@font-size-base * @line-height-base)); // default spacing between elements
+@dimension-padding-sm:          (@font-size-base / 4);
+@dimension-padding-base:        (@font-size-base / 2); // typicallly used as vertical internal padding of elements
+@dimension-padding-lg:          @font-size-base; // typicallly used as horizontal internal padding of elements
+@dimension-padding-xlg:         (@font-size-base * 3);
+
+// Borders
+@dimension-border-radius:       4px;
+@dimension-border-radius-lg:    8px;
+
+//
+// Scaffolding
+// ---
+@container-width:           810px;
+@container-padding:         @font-size-base;
+@container-border:          @font-size-base;
+@body-bg:                   @colour-white;
+@text-colour:               @colour-grey;
+@link-colour:               @colour-accent;
+@link-hover-colour:         darken(@link-colour, 10%);
+@link-decoration:           underline;
+@border-colour:             @colour-grey-lighter;
+@border-default:            1px solid @border-colour;
+@title-logo-height:         60px;
+
+//
+// Z index
+// ---
+@z-index-below:      -1;
+@z-index-base:       1;
+@z-index-top:        100;
+
+//
+// Typography
+// ---
+@font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-serif;
+
+@font-size-base:          18px;
+
+@font-weight-weak:        300;
+@font-weight-base:        400;
+@font-weight-heading:     700;
+@font-weight-strong:      @font-weight-heading;
+
+@line-height-base:        1.5;
+@line-height-sm:          1.2;
+
+//
+// Forms
+// ---
+@input-bg:                       @colour-white;
+
+@input-colour:                   @colour-grey;
+@input-border:                   @border-default;
+@input-border-radius:            @dimension-border-radius;
+
+@input-colour-placeholder:       @colour-grey-light;
+
+@input-height-base:              (@dimension-spacing-default + (@dimension-padding-base * 2) + 2);
+
+//
+// Tables
+// ---
+@table-bg:                       transparent;
+@table-bg-accent:                @colour-grey-lightest;
+@table-bg-hover:                 @colour-grey-lighter;
+@table-border:                   @border-default;

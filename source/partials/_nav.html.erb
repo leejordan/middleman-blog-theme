@@ -1,0 +1,8 @@
+<nav class="container">
+    <ol class="list-inline lead">
+        <li><h2 class="heading-inline margin-reset">Tags: </h2></li>
+        <% blog.tags.each do |tag, articles| %>
+            <li><%= link_to "#{tag}", tag_path(tag) %></li>
+        <% end %>
+    </ol>
+</nav>

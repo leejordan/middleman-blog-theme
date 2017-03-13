@@ -1,0 +1,158 @@
+//
+// Clearfix
+// ---
+.clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//
+//  States
+// ---
+.tab-focus-state(@colour: @link-colour, @text-colour: @colour-white, @text-decoration: none) {
+    outline: none;
+    background-color: @colour;
+    color: @text-colour;
+    text-decoration: @text-decoration;
+    box-shadow: 0 0 0 2px @colour;
+}
+
+.form-focus(@colour: @colour-brand) {
+    outline: none;
+    border-color: @colour;
+    @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 0 2px @colour;
+    box-shadow: @shadow;
+}
+
+//
+// Margins
+// ---
+.margins(@top, @right, @bottom, @left) {
+    margin: ( @font-size-base * @top ) ( @font-size-base * @right ) ( @font-size-base * @bottom ) ( @font-size-base * @left );
+    margin: ~"@{top}rem" ~"@{right}rem" ~"@{bottom}rem" ~"@{left}rem"
+}
+
+//
+// Layout
+// ---
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+.center-block() {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+//
+// Text
+// ---
+// Font rule mixin with pixel fallback
+.font-size(@size) {
+    font-size: ( @font-size-base * @size );
+    font-size: ~"@{size}rem";
+}
+
+.small() {
+    font-size: .75em;
+}
+
+//
+// Images
+// ---
+.img-responsive() {
+    display: block;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+
+}
+
+.img-bleed() {
+    .img-responsive();
+    width: 100%;
+}
+
+//
+// Improve alignment and spacing of inner content
+// ---
+.inner-content-fix() {
+    > :first-child {
+        margin-top: 0;
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+//
+// Positioning
+// ---
+.position(@position: absolute, @top, @right, @bottom, @left) {
+    position: @position;
+
+    & when (isnumber(@top)), (@top = auto) {
+        top: @top;
+    }
+
+    & when (isnumber(@right)), (@right = auto) {
+        right: @right;
+    }
+
+    & when (isnumber(@bottom)), (@bottom = auto) {
+        bottom: @bottom;
+    }
+
+    & when (isnumber(@left)), (@left = auto) {
+        left: @left;
+    }
+}
+
+//
+// Backgrounds
+// ---
+
+.background-cover() {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.background-contain() {
+    background-repeat: no-repeat;
+    background-position: 100% center;
+    background-size: contain;
+}
+
+//
+// Lists
+// ---
+.list-unstyled-style() {
+    list-style: none;
+    padding: 0;
+}
+
+// Inline turns list items into inline-block
+.list-inline-style() {
+    .list-unstyled-style();
+    display: inline-block;
+
+    > li {
+        display: inline-block;
+        padding: 0;
+        .margins(0, 1, 0, 0);
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

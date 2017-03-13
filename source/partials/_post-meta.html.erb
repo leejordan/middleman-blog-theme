@@ -1,0 +1,11 @@
+<nav class="page-section page-section--footer">
+    <div class="container container--content">
+        <p class="margin-reset">Posted on: <%= current_article.date.strftime('%b %e %Y') %></p>
+        <ul class="list-inline lead">
+            <li><strong>Tagged:</strong> </li>
+            <% current_article.tags.each do |tag, articles| %>
+                <li><%= link_to "#{tag}", tag_path(tag) %></li>
+            <% end %>
+        </ul>
+    </div>
+</nav>

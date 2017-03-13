@@ -1,0 +1,109 @@
+//
+// Layout
+// ---
+
+.title {
+    display: inline-block;
+    font-family: @font-family-sans-serif;
+    font-weight: @font-weight-heading;
+    margin: 0;
+    line-height: @title-logo-height;
+    .font-size(1.8);
+    color: @colour-brand;
+
+    a {
+        text-decoration: none;
+        box-shadow: none;
+
+        &:focus {
+            .tab-focus-state(transparent, @link-hover-colour, underline);
+        }
+    }
+}
+
+.title-logo {
+    display: block;
+    float: left;
+    margin-right: .5em;
+    height: @title-logo-height;
+    width: @title-logo-height;
+    overflow: hidden;
+    border: (@container-border / 2) solid @colour-brand;
+    border-radius: 50%;
+    background-color: @text-colour;
+    vertical-align: middle;
+    z-index: @z-index-top;
+    transition: border 0.2s ease-out, box-shadow 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+        border: (@container-border / 3) solid @colour-brand;
+    }
+
+    @media (min-width: @reflex-md) {
+        position: fixed;
+        left: 50%;
+        margin-left: -((@container-width / 2) + (@container-padding * 2) + (@container-border / 2) + (@title-logo-height / 2));
+        // border: (@container-border / 2) solid @colour-brand-light;
+    }
+}
+
+// Containers
+.container {
+    position: relative;
+    width: 100%;
+    max-width: @container-width;
+    margin: 0 auto;
+    padding: 0 @container-padding;
+}
+
+.container,
+.grid {
+    &:before {
+        content: '';
+        display: block;
+        width: @container-border;
+        .position(absolute, -(@container-padding * 3), ~'', -(@container-padding * 3), -(@container-padding * 3));
+        background-color: @colour-brand-light;
+    }
+}
+
+.container--content {
+    .inner-content-fix();
+}
+
+// Page sections
+.page-section {
+    position: relative;
+    display: block;
+    padding: (@container-padding * 3) 0;
+}
+
+.page-section--header {
+    padding: @container-padding 0;
+    background-color: @colour-brand-light;
+
+    .container,
+    .grid {
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.page-section--footer {
+    padding-bottom: (@container-padding * 6);
+    background-color: @colour-brand-light;
+
+    .container,
+    .grid {
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.page-section--alt {
+    background-color: @colour-brand-light;
+    padding: @container-padding 0;
+}
