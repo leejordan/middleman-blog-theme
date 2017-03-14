@@ -20,6 +20,11 @@ page '/*.txt', layout: false
 # Helpers
 ###
 
+# code syntax
+set :markdown_engine, :redcarpet
+set :markdown, :fenced_code_blocks => true, :smartypants => true
+activate :syntax
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"

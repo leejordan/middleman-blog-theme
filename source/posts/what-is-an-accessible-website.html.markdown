@@ -5,195 +5,160 @@ date: 2015-11-13
 tags: accessibility, css3, design, html5, javascript, ux
 ---
 
-This is a follow up post with lots of examples which is intended as part 2 to [my earlier post about what an accessible website is][1]. It's based on this definition of an accessible website:
+Often when we try to define what an accessible website is, we default to the position that it's a website that can be used by a visually impaired person via a screen reader. If your website makes sense and can be navigated when it's read out by a screen reader then you have an "accessible website", you've ticked a box and your work here is done. Well done, let's all go to the bar.
+
+In reality, this definition is far too narrow and doesn't come close to imparting an understanding of the other accessibility issues that can arise. It's also a definition that makes accessibility as a whole easy to dismiss. Some might roll their eyes and complain a lot of extra work for a very small percentage of users. Others might declare "we don't have any blind users" as a reason for not making a website accessible. "We're not marketing ourselves to the visually impaired demographic" somebody might say before dropping their microphone and leaving the room to sustained applause. One brave soul might make the claim they they "don't have time to test in other browsers or devices". It's important to note here that these are not straw man arguments but are in fact real things that I have heard actual, living, breathing, human beings say.
+
+I'd argue this is already an unethical, exclusive, and short sighted approach to web development but it is, unfortunately, an argument that could carry a lot of weight in a business environment where we often have to weigh up the investment of effort and time against the return on that investment.
+
+So if you don't personally care about visually impaired people and have decided that you don't want their money after all then I am going to need to come up with a stronger definition by looking elsewhere. Here's how the web accessibility initiative answers this question:
+
+> Web accessibility means that people with disabilities can use the Web. <cite><a href="https://www.w3.org/WAI/intro/accessibility.php">https://www.w3.org/WAI/intro/accessibility.php</a></cite>
+
+This is true and I have no argument with it but it's not a complete answer to the question so let's start again.
+
+## What is an accessible website?
+
+If you take away all of the concerns about profit, traffic, branding, design, copy-writing, and everything else that goes into the creation of a successful website you can distill any website down to a single coherent "thing" that can be defined as follows:
+
+> The goal of this website is to be read, interacted with, or bought from.
+
+Accessibility is about not allowing anything to get in the way of your users while they attempt to do that. So here's a more useful definition:
 
 > An accessible website is one that allows as many different people and devices as possible to interact with it
 
-## Microsoft support
+Hopefully you agree with this so far. Now it's time to flesh this definition out a bit.
 
-![how to enable javascript user search][2]
+## Accessibility issues are user experience issues
 
-This user is trying to find out how to enable JavaScript in his browser because it is currently disabled. As a loyal Microsoft fan they are using Bing.com and they make sure to follow the link to the microsoft support site because they love Microsoft.
+Here's a list of users who could potentially have accessibility issues. You can probably think of a few more but the point is that it's not just about people with visual impairments. It's not even just about disabilities in general. It's about users who...
 
-Then this happens:
+*   have problems using a mouse or keyboard
+*   have problems with hearing
+*   have problems with reading and understanding
+*   are using a keyboard only
+*   are using a game controller or remote control
+*   are not reading in their first language
+*   are inexperienced with using websites
+*   are afraid of clicking the wrong button
+*   can’t listen to sound at work
+*   have a slow internet connection
+*   have a small screen or unusual device
+*   use an old web browser or operating system
 
-![how to enable javascript microsoft support page][3]
+This again is the point at which some people might roll their eyes and suggest that "you can't build the perfect website for every single user in the world" and they would be right. That would be impossible. No arguments here.
 
-When they arrive at the microsoft support page they are told that the site requires Javascript to function. The one user who actually needed to read this page is blocked from doing so. This page is inaccessible to that user, and a poor user experience.
+What *is* possible however is not intentionally placing barriers in the way of your users if you can possibly avoid it.
 
-It's worth noting that since I captured these screenshots, Microsoft have corrected this oversight and the page now renders without requiring Javascript.
+![broken door handle][1]
 
-## Hacker news readability
+To make a (perhaps slightly tortured) analogy that would be like opening an old-fashioned bricks and mortar shop and having a broken door handle. Customers could still enter if they tried the handle several times but why wouldn't you just fix the handle? Now imagine that instead of a broken handle there's a sign that says "you can only enter this shop if you use google chrome" and all of a sudden it's a great analogy and *I've just won a literary prize*.
 
-Hacker news is a very popular website among the developer community despite having issues with poor readability of text.
+We should also spare a thought for users who are not even human beings, especially those [robots used by search engines like google][2] to index your website. If you make your website inaccessible to robots it may affect your search engine performance. More worryingly, the robots will remember how you treated them when they rule the earth.
 
-![hacker news screenshot][4]
-
-[WCAG 2.0][5] level AA requires a contrast ratio of 4.5:1 for text. This site does [not pass that test][6] and is less than ideal for a website whose entire purpose is to display text that people will read.
-
-![hacker news screenshot][7]
-
-If you're on a VGA monitor then it's a terrible experience even for people with 20/20 vision.
-
-Why not make the content as readable as possible? If I'm struggling to read the content then the site is inaccessible to me, and gives me a poor user experience.
-
-We can't dictate what equipment our users will have so we have to compromise. Here's my solution to the problem:
-
-![hacker news fixed][8]
-
-Black text on a white background with a larger line height makes it much more readable. Users can now easily read the content, which is the entire purpose of the website.
-
-## Lush.com text over images
-
-If you're writing text on a web page, the intention is to have people read it. If you're placing text over images, Make sure you have a high contrast between the text and the image behind so it's easily readable. Otherwise why is the text there at all?
-
-This example of a poor implementation of text over images is from [lush.com][9]:
-
-![text over images][10]
-
-![text over images][11]
-
-I'm not arguing that you should never place text over images but that when you do so, you should make sure the text is as readable as possible. Nielsen Norman Group have [published some useful guidance][12] on this subject.
-
-## Google chrome download
-
-In February 2013 the download link for google chrome broke because somebody broke an unrelated javascript library used by the google chrome website and included in all pages.
-
-JavaScript is fickle. If it encounters an error it sulks and refuses to execute any more code. It's because of this that browsers were unable to handle the click action of the download link and nobody could download google chrome.
-
-![download chrome page error][13]
-
-Notice there is not a valid `href` on the link. The default behaviour of that link is to *do nothing*.
-
-### What is the purpose of this page?
-
-The single purpose of this page is for a user to download google chrome. This purpose is inaccessible to the user when JavaScript is broken. You could argue "don't break your javascript" but all developers know that doesn't happen in reality and websites are always prone to breakage for various reasons.
-
-So wy is this not a valid link that works without Javascript? In this case, Google are using Javascript to work out which version of chrome to give the user based on their operating system. This is a fantasic idea and provides a really great user experience (when it works).
-
-To avoid this problem happening again, Google could have the link, by default, take users to a generic download page where all versions of google chrome are available.
-
-This is a less pleasing user experience because it requires thought and more clicks. But we still have the "optimal" user experience when JavaScript is working (which is most of the time). If (or *when*) JavaScript breaks again, users can still download chrome and the single purpose of that page (to download chrome) is going to be accessible to more users.
-
-## Amazon instant video
-
-In 2013, shortly after joining Amazon, I went to their seattle office and was staying in a hotel where I wanted to watch a video using my amazon staff account. Unfortunately the trackpad on my mac was broken but this was no problem for me because I am a *POWER USER* so I used spotlight to open chrome, tabbed to the search field, found a movie, arrived on the video page
-
-Then this happened...
-
-<div class="embed-responsive embed-responsive-16by9">
-  <video src="http://www.lendmeyourear.net/wp-content/uploads/amazon.mp4" loop controls style="width: 100%;"> Your browser can't play this video but you can [download it][14]. </video>
-</div>
-
-I couldn't purchase the video because the "buy" button was not focusable by keyboard. Why is that button not focusable? The page is still available on the [web archive][14] so you can see for yourself if you want to but the reason is ultimately because the button was not really a button at all:
-
-<pre class="prettyprint"><div class="avod-button purchase" asin="B00C1BU7V8">
-  <table class="avod-spritebox avod-one-click-btn" border="0" cellpadding="0" cellspacing="0">
-    <tbody>
-      <tr height="20">
-        <td class="content" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -4px -211px; padding: 0px 10px 0px 30px;">
-          1-Click<sup>®</sup> $3.99
-              
-        </td>
-            
-        
-        <td width="7" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -396px -211px; line-height: 0.1px;">
-          <!-- -->
-        </td>
-          
-      </tr>
-        
-      
-      <tr height="7">
-        <td style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -4px -231px">
-          
-        </td>
-            
-        
-        <td width="7" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -396px -231px; line-height: 0.1px;">
-          <!-- -->
-        </td>
-          
-      </tr>
-      
-    </tbody>
-  </table>
-  
-   
-</div>
-</pre>
-
-Just take a good look at this atrocity. *Obviously* it's a table wrapped in a div and made clickable with JavaScript
-
-### How can this be fixed?
-
-This is bad because a `div` or `table` is not an innately clickable or focussable element. It was made clickable via JavaScript but was impossible to focus with the keyboard. To fix this, we could start thinking about using `tabindex` or handling it with Javascript but why are we putting effort into fixing this?
-
-Why not use an element that is naturally clickable and focusable like `<button>`, `<input>` or `<a>`? Whoever built this has gone out of their way to ignore web standards.
-
-### What is the point of the amazon website?
-
-The entire purpose of the amazon website is to sell things and make money. In this instance, I was unable to buy something. The ability to buy a video was inaccessible to me and I had a poor user experience.
-
-I'm not suggesting amazon's developers should have specifically gone out of their way to support users with broken trackpads. I'm not imagining a user story or ticket that says "as a user with a broken trackpad I want to be able to buy a video". I'm suggesting if they built it properly they would have supported those users without any extra effort and their video page would have been more accessible to more users and devices.
-
-These days, Amazon have fixed this problem and now use a `<form>` with an `<input>` and because it's a `<form>`, it works natively in all browsers without JavaScript, so amazon can clearly see the benefits of making this accessible and progressively enhanced. Amazon like money, and they are now letting more users spend more money with them
+A user doesn't understand why your website isn't working for them. They just move on to another site that does work for them.
 
 ## How can we build accessible websites?
 
-Making an accessible website sounds like a lot of work but most of it comes for free if you follow web standards. It's not about putting extra effort into making it work individually for every possible user out there.
+I'm not going to get too far into the specifics here because frankly you could write an entire book on this subject and unsurprisingly [some people already have][3].
 
-It's about putting most of your effort into building a robust, reliable, standards-driven foundation.
+When we are building accessible websites we need to be defensive and make careful considered choices and discard anything that gets in the user's way of interacting with the website. We can't dictate how our websites will be consumed and cannot make any assumptions about the user's circumstances, level of understanding, and the platform they are browsing on.
 
-No matter how complex your website will eventually become, if it's built on a solid foundation, it is more likely to work for more of your users, regardless of their circumstances and the platform they are using.
+This approach does, inevitably, lead to compromises in web design and development. I'd argue that really creative websites can be an absolute joy to interact with but if they are not accessible to as many users as possible then they have imposed an artificial limit on the amount of users they can attract. I'm not against creativity and "art for art's sake" in any way and I am glad and appreciative that designers and developers are doing some amazingly creative things on the internet but any site with a clear goal, whether it's to be read, interacted with, or bought from, should seek to make this as easy as possible for as many users as possible and that does ultimately result in compromise.
 
-As developers or designers or anybody involved in the making of a website, we should be able to make a business case for making our websites accessible to more users.
+The very best websites manage to combine creativity with accessibility and they achieve this by following principles such as [progressive enhancement][4], [web standards][5], [unobtrusive javascript][6] and [universal design][7].
 
-## The business case
+If you're still unconvinced then let me try and assure you that if you approach your website from the very beginning with the intention to make an accessible website it really doesn't take much more effort. It's not *easy* but it's certainly possible. It just requires a bit of thought, care, and compromise. It becomes a much harder ordeal when trying to retro-fit accessibility into an inherently inaccessible website.
 
-I recently rebuilt the [graze.com signup flow][15] to more closely follow web standards and address some of the issues I have described earlier in this post.
+As devices and browsers continue to evolve there will be more and more ways for users to interact with your websites. Building from an accessible, stable, and progressively enhanced foundation can give you some measure of confidence that your websites will continue to work for the vast majority of users for many years to come.
 
-![graze signup comparison][16]
+There are exceptions to this rule. Some websites will never be accessible to everyone due to their very nature. I'll let [Emil Björklund][8] explain this point:
 
-### What changed?
+> Browser-based games. Image editing in the browser. Video chats. There’s plenty of cases. But let’s say your "web thang" does invoicing for small businesses. You probably can’t have the feature where they create their own letterhead available when JS fails. But the core of the application: listing, editing, sending and printing invoices: surely that’s doable, right?
 
-*   Correct use of form `labels` instead of reliance on placeholder only
-*   HTML5 form validation
-*   JavaScript validation when a field loses focus
-*   No reliance on JavaScript (progressive enhancement)
-*   Larger, more readable text
-*   More white space between fields
+## Some brief guidelines on how to make accessible websites
 
-### The results
+### Semantic and appropriate use of headings
 
-On desktop there was a small improvement in conversion but 60% of graze.com's traffic is on mobile where it showed an average 7% improvement in conversion rate.
+Useful for [users of screen readers to navigate your page][9], and for search engine robots. It also is the most semantically appropriate way to establish a hierarchy of importance for your pages which is easy to recognise and understand both by human beings and robots/crawlers.
 
-![graze signup rates][17]
+### Alt attributes on images
 
-(I realise this is quite a meaningless graph without the axes and values but I censored it at the last minute in case I accidentally revealed some sensitive business information)
+Alt attributes should be used to give a concise textual description of the image and should use text that [fulfills the same function as the image][10]. Note: It's fine to include a blank alt attribute when that alt attribute would only contain text that is repeated in close proximity to the image.
 
-## Final thoughts
+### Readable text
 
-I already wanted to make websites that work well for as many users as possible out of a sense of pride. For example, I sometimes have trouble sleeping if I suspect I may have used a semantically inappropriate element on a page.
+If text is being written then you want people to be able to read it right? Test your typography for legibility across multiple browsers and operating systems because there are huge differences in font rendering. Find a common ground where fonts are legible across as many different devices you can get your hands on. Use consistent approaches to text across your entire website and follow [these principles for readable web typography][11]. Use white space and padding to aid readability.
 
-The good news is that making accessible websites *is* compatible with global capitalism.
+![font rendering example][12]
 
-When you frame accessiblity issues as user experience issues, it becomes easier to make a business case for spending time on it.
+### High contrast colours
 
- [1]: http://www.lendmeyourear.net/what-is-an-accessible-website.html
- [2]: http://www.lendmeyourear.net/wp-content/uploads/javascript-1.png
- [3]: http://www.lendmeyourear.net/wp-content/uploads/javascript-2.png
- [4]: http://www.lendmeyourear.net/wp-content/uploads/hacker.png
- [5]: http://www.w3.org/TR/WCAG20/
- [6]: http://webaim.org/resources/contrastchecker/?fcolor=828282&bcolor=f6f6ef
- [7]: http://www.lendmeyourear.net/wp-content/uploads/hacker-winchrom-vga.png
- [8]: http://www.lendmeyourear.net/wp-content/uploads/hacker-fix.png
- [9]: http://lush.com
- [10]: http://www.lendmeyourear.net/wp-content/uploads/text-images.png
- [11]: http://www.lendmeyourear.net/wp-content/uploads/text-images-2.png
- [12]: https://www.nngroup.com/articles/text-over-images/
- [13]: http://www.lendmeyourear.net/wp-content/uploads/download-chrome-error.png
- [14]: http://web.archive.org/web/20130330045046/http://www.amazon.com/Lincoln/dp/B00C1BU7V8
- [15]: http://graze.com
- [16]: http://www.lendmeyourear.net/wp-content/uploads/graze-comparison.jpg
- [17]: http://www.lendmeyourear.net/wp-content/uploads/graze-stats.png
+Colours should contrast enough to be visible on poor quality displays such as vga monitors and black and white screens. You can use a [web based tool][13] for testing this. White text on a grey background may look fine on a high quality display but can be almost illegible on others.
+
+Here's an example of a low contrast website which could potentially cause a problem for even fully-sighted users with good quality hardware.
+
+![low contrast text example][14]
+
+### Make interaction obvious
+
+Avoid confusion and pain for your users by trying to clearly indicate what will happen when something is clicked. Make it [obvious what is clickable][15] on your site. Always use focus states for clickable elements so devices without hover state support can navigate your site.
+
+#### The squint test
+
+It's useful to do a squint test on your websites to make sure your calls to action stand out. You can either use [this squint test chrome extension][16] or do it the old fashioned way and actually just partially close your eyes.
+
+I'd argue that both of these examples pass the squint test.
+
+![squint test example 1][17]
+
+![squint test example 2][18]
+
+### Progressively enhance
+
+Build a core baseline experience first to ensure as many of your users as possible have a chance at using your website. This gives you a solid foundation upon which to build. Gov.uk have produced a really well-written [introduction to harnessing progressive enhancement to improve accessibility][19] which can help with this.
+
+### Follow web standards
+
+Stick to the most appropriate standard elements where possible. Even if you're building an intricate UI it's nearly always possible to use JavaScript and CSS to progressively enhance a `form`, `button` or a link instead of re-purposing an inappropriate element such as a `div` and forcing it to become clickable via JavaScript.
+
+Browser manufacturers following web standards have already done the work for you here so why spend time and effort engineering something that only works for 50% of your users? Get stuck into [the HTML5 spec][20] and don't reinvent the wheel.
+
+### Closed captions on video
+
+Not just for users with hearing impairments, this is useful for anybody who cannot currently use sound for any reason. For example, somebody trying to watch the football game in a noisy room.
+
+### Use aria attributes and roles
+
+Enhance accessibility by using [ARIA attributes][21] and [role attributes][22]. It can be as simple as adding aria-hidden to an element that just won't make any sense to an assistive device or aria-live on an element that contains very important info that is updated as the user interacts with the website (e.g. a shopping cart might read "4 items" when a new product is added)
+
+### And on and on...
+
+There's much more and I could carry on and on coming up with examples but if you want to discover more I suggest you follow some of the links in this post. There is a lot of information out there should you seek it.
+
+## Conclusion
+
+An accessible website is one that allows as many different people and devices as possible to interact with it successfully. That's really the heart of the matter.
+
+ [1]: http://www.lendmeyourear.net/wp-content/uploads/shop-sign.jpg
+ [2]: https://support.google.com/webmasters/answer/1061943?hl=en
+ [3]: http://www.uiaccess.com/books.html
+ [4]: https://jakearchibald.com/2013/progressive-enhancement-still-important/
+ [5]: http://www.lendmeyourear.net/youve-got-to-have-standards.html
+ [6]: http://www.lendmeyourear.net/my-approach-to-unobtrusive-javascript.html
+ [7]: https://en.wikipedia.org/wiki/Universal_design
+ [8]: http://thatemil.com/blog/2013/07/02/progressive-enhancement-still-not-dead/
+ [9]: http://www.youtube.com/watch?v=AmUPhEVWu_E
+ [10]: http://www.w3.org/QA/Tips/altAttribute
+ [11]: http://www.smashingmagazine.com/2009/03/10-principles-for-readable-web-typography/
+ [12]: http://www.lendmeyourear.net/wp-content/uploads/font-rendering.png
+ [13]: http://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333
+ [14]: http://www.lendmeyourear.net/wp-content/uploads/low-contrast-copy.png
+ [15]: http://www.nngroup.com/articles/clickable-elements/
+ [16]: https://chrome.google.com/webstore/detail/the-squint-test/gppnipfbappicilfniaimcnagbpfflpg?hl=en
+ [17]: http://www.lendmeyourear.net/wp-content/uploads/squint-test-1.png
+ [18]: http://www.lendmeyourear.net/wp-content/uploads/squint-test-2.png
+ [19]: https://www.gov.uk/service-manual/making-software/progressive-enhancement.html
+ [20]: http://www.w3.org/TR/html5/
+ [21]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+ [22]: http://www.w3.org/TR/role-attribute/

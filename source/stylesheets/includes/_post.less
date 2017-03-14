@@ -3,10 +3,24 @@
 // ---
 
 .container--post {
-    .inner-content-fix();
-
     img {
         .img-responsive();
         margin: @container-padding auto;
+    }
+
+    > p:first-of-type {
+        .font-size(1.15);
+    }
+
+    > p,
+    > ul,
+    > ol,
+    > h1,
+    > h2,
+    > h3,
+    > h4 {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

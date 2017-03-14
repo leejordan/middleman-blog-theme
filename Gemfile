@@ -23,3 +23,6 @@ gem 'less'
 
 # Nokogiri used nominally for article summaries
 gem 'nokogiri'
+
+# Code syntax support
+gem "middleman-syntax"

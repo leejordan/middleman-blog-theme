@@ -2,6 +2,7 @@
 // Buttons
 // ---
 
+button,
 .button {
     .button-style();
 }
@@ -26,13 +27,14 @@
     &:after {
         content: '\2192';
         transform: translateX(0);
-        .font-size(2);
+        margin-top: -@font-size-base;
+        .font-size(4);
     }
 
     &:hover,
     &:focus {
         &:after {
-            transform: translateX(0.2em);
+            transform: translateX(@font-size-base);
         }
     }
 }
@@ -41,14 +43,15 @@
 .button--prev {
     &:before {
         content: '\2190';
-        transform: translateX(0.2em);
-        .font-size(2);
+        transform: translateX(0);
+        margin-top: -@font-size-base;
+        .font-size(4);
     }
 
     &:hover,
     &:focus {
         &:before {
-            transform: translateX(0);
+            transform: translateX(-@font-size-base);
         }
     }
 }
