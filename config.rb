@@ -25,6 +25,19 @@ set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true
 activate :syntax
 
+# generate search index
+activate :search do |search|
+  search.resources = ['posts']
+  search.index_path = 'search/search.json'
+  search.fields = {
+    title: {index: true, boost: 100, store: true},
+    content: {index: true, boost: 50},
+    slug: {index: false, store: true},
+    date: {index: false, store: true},
+  }
+end
+
+# generate blog specific pages
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -54,11 +67,8 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+# generate feed
 page "/feed.xml", layout: false
-# Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
 
 # Methods defined in the helpers block are available in templates
 # helpers do

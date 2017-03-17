@@ -1,10 +1,22 @@
 ---
-pageable: Tags
+title: Tagged posts
 ---
-<h1>Showing posts tagged '<%= tagname %>'</h1>
 
-<ul>
-  <% page_articles.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
+<main class="page-section">
+    <div class="grid">
+        <div class="grid__col-xs-12 container--content">
+            <h1><%= page_articles.size %> posts tagged as '<%= tagname %>'</h1>
+        </div>
+    </div>
+    <% page_articles.each_with_index do |article, index| %>
+        <article class="grid grid--align-center">
+            <div class="grid__col-xs-4">
+                <%= link_to image_tag("images/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
+            </div>
+            <div class="grid__col-xs-8">
+                <h2 class="margin-reset"><%= link_to article.title, article %></h2>
+                <p class="margin-reset"><%= article.date.strftime('%b %e %Y') %></p>
+            </div>
+        </article>
+    <% end %>
+</main>

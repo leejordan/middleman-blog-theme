@@ -2,7 +2,7 @@
 title: Layering CSS so we can use flexbox now
 slug: layering-CSS-so-we-can-use-flexbox-now
 date: 2016-03-18
-tags: accessibility, css3, design, html5, javascript, ux
+tags: css3, design, html5
 ---
 
 We can start using flexbox right now while still having a similar layout in older browsers by taking advantage of the "cascading" part of cascading style sheets. In this article I'm going to explain how we can take advantage of some of the similarities between flexbox and inline-block layouts to achieve a progressively enhanced layout that looks good in all browsers.

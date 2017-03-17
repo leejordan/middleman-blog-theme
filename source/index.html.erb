@@ -2,6 +2,9 @@
 title: All posts
 ---
 
+<%= partial 'partials/intro', :locals => { :offset => true } %>
+<%= partial 'partials/nav' %>
+
 <main class="page-section">
     <% page_articles.each_with_index do |article, index| %>
         <article class="grid grid--align-center">

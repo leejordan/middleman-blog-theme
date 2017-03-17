@@ -2,6 +2,7 @@
 // Layout
 // ---
 
+// Page title
 .title {
     display: inline-block;
     font-family: @font-family-sans-serif;
@@ -47,6 +48,7 @@
     }
 }
 
+// Portrait
 .intro-portrait {
     .pull-right();
     .img-responsive();
@@ -56,6 +58,22 @@
 
 .intro-portrait--offset {
     margin-top: -120px !important;
+}
+
+// Loader
+.loader {
+    .lead();
+    height: (@title-logo-height * 2);
+    width: (@title-logo-height * 2);
+    border: (@container-border / 2) solid @colour-brand;
+    border-radius: 50%;
+    animation: pulsate 1s infinite linear;
+}
+
+@keyframes pulsate {
+    0% { border-color: @colour-brand; }
+    50% { border-color: lighten(@colour-brand, 20%); }
+    100% { border-color: lighten(@colour-brand, 40%); }
 }
 
 // Containers

@@ -1,0 +1,63 @@
+---
+title: Search results
+---
+
+<section class="page-section" data-search-intro>
+    <div class="container container--content">
+        <h1>Search results</h1>
+        <p class="lead margin-reset hidden" data-results-message>
+            <span data-search-number></span> <span data-search-item>results</span> for "<span data-search-term></span>"
+        </p>
+    </div>
+</section>
+
+<section class="page-section hidden" data-search-no-results>
+    <div class="container container--content">
+        <h1>No results found</h1>
+        <p class="lead margin-reset">
+            Your search for "<span data-search-term></span>" has no results. But don't despair! Here are some posts you might like &hellip;
+        </p>
+    </div>
+</section>
+
+<section class="page-section hidden" data-search-suggestions>
+    <% page_articles.sample(3).each_with_index do |article, index| %>
+        <article class="grid grid--align-center">
+            <div class="grid__col-xs-4">
+                <%= link_to image_tag("images/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
+            </div>
+            <div class="grid__col-xs-8">
+                <h2 class="margin-reset"><%= link_to article.title, article %></h2>
+                <p class="margin-reset"><%= article.date.strftime('%b %e %Y') %></p>
+            </div>
+        </article>
+    <% end %>
+</section>
+
+<section class="page-section">
+    <div class="container container--content">
+        <p class="loader text-center">processing your request</p>
+    </div>
+</section>
+
+<section class="page-section" data-search-loading>
+    <div class="container container--content">
+        <p class="loader text-center">Loading...</p>
+    </div>
+</section>
+
+<section class="page-section hidden" data-results>
+    <article class="grid grid--align-center" data-results-sample>
+        <div class="grid__col-xs-4">
+            <a href="" data-results-sample-link><img src="" class="grid__cell-img link-img" data-results-sample-img></a>
+        </div>
+        <div class="grid__col-xs-8">
+            <h2 class="margin-reset"><a href="" data-results-sample-link data-results-sample-title></a></h2>
+            <p class="margin-reset" data-results-sample-date></p>
+        </div>
+    </article>
+</section>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<%= javascript_include_tag 'javascripts/lunr.js' %>
+<%= javascript_include_tag 'javascripts/page-search.js' %>
