@@ -32,7 +32,6 @@
     border: (@container-border / 2) solid @colour-brand;
     border-radius: 50%;
     background-color: @text-colour;
-    vertical-align: middle;
     z-index: @z-index-top;
     transition: border 0.2s ease-out, box-shadow 0.2s ease-out;
 
@@ -62,9 +61,11 @@
 
 // Loader
 .loader {
-    .lead();
-    height: (@title-logo-height * 2);
-    width: (@title-logo-height * 2);
+    display: inline-block;
+    vertical-align: middle;
+    height: @title-logo-height;
+    width: @title-logo-height;
+    margin-right: @container-border;
     border: (@container-border / 2) solid @colour-brand;
     border-radius: 50%;
     animation: pulsate 1s infinite linear;
@@ -91,7 +92,7 @@
         content: '';
         display: block;
         width: @container-border;
-        .position(absolute, -(@container-padding * 3), ~'', -(@container-padding * 3), -(@container-padding * 3));
+        .position(absolute, -(@container-padding * 5), ~'', -(@container-padding * 5), -(@container-padding * 3));
         background-color: @colour-brand-light;
     }
 }

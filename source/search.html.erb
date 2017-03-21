@@ -5,6 +5,8 @@ title: Search results
 <section class="page-section" data-search-intro>
     <div class="container container--content">
         <h1>Search results</h1>
+        <noscript><p class="lead">Sorry but this search relies on JavaScript. You'll need to enable JavaScript to use this search.</p></noscript>
+        <p class="lead" data-search-loading><span class="loader"></span>Loading...</p>
         <p class="lead margin-reset hidden" data-results-message>
             <span data-search-number></span> <span data-search-item>results</span> for "<span data-search-term></span>"
         </p>
@@ -32,18 +34,6 @@ title: Search results
             </div>
         </article>
     <% end %>
-</section>
-
-<section class="page-section">
-    <div class="container container--content">
-        <p class="loader text-center">processing your request</p>
-    </div>
-</section>
-
-<section class="page-section" data-search-loading>
-    <div class="container container--content">
-        <p class="loader text-center">Loading...</p>
-    </div>
 </section>
 
 <section class="page-section hidden" data-results>
