@@ -176,7 +176,7 @@
     font-family: @font-family-sans-serif;
     font-size: @font-size-base;
     font-weight: @font-weight-base;
-    line-height: @font-size-base;
+    line-height: @line-height-sm;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
@@ -201,6 +201,7 @@
 
 .button-icon() {
     transition: all 0.2s ease-out;
+    line-height: @line-height-sm;
 
     &:before,
     &:after {
@@ -211,6 +212,7 @@
         margin-top: -(@font-size-base / 2);
         color: transparent;
         font-family: @font-family-base;
+        line-height: @font-size-base;
     }
 
     &:before {

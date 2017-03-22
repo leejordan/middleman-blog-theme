@@ -12,17 +12,15 @@
     <div class="grid">
         <% if current_article.previous_article %>
             <div class="grid__col-auto grid--order-2 grid--order-1-xs">
-                <a href="<%= current_article.previous_article.url %>" class="grid__cell button button--prev">previous post<br>
-                    <%= image_tag("images/" + current_article.previous_article.data.slug + "/cover.jpg") %>
-                    <br><%= current_article.previous_article.title %>
+                <a href="<%= current_article.previous_article.url %>" class="grid__cell button button--prev">
+                    <p>Previous post: <%= current_article.previous_article.title %></p>
                 </a>
             </div>
         <% end %>
         <% if current_article.next_article %>
             <div class="grid__col-auto grid--order-1 grid--order-2-xs">
-                <a href="<%= current_article.next_article.url %>" class="grid__cell button button--next">next post<br>
-                    <%= image_tag("images/" + current_article.next_article.data.slug + "/cover.jpg") %>
-                    <br><%= current_article.next_article.title %>
+                <a href="<%= current_article.next_article.url %>" class="grid__cell button button--next">
+                    <p>Next post: <%= current_article.next_article.title %></p>
                 </a>
             </div>
         <% end %>

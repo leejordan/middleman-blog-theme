@@ -15,12 +15,41 @@
     > p,
     > ul,
     > ol,
-    > h1,
     > h2,
     > h3,
-    > h4 {
-        max-width: 600px;
+    > h4,
+    > h5 {
+        max-width: @post-width;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    > h1 {
+
+    }
+
+    > h2 {
+        display: block;
+        position: relative;
+        background-color: @colour-white;
+        z-index: @z-index-base;
+
+        &:before {
+            content: '';
+            display: block;
+            .position(absolute, -@container-padding, 0, -@container-padding, -(@container-padding * 8));
+            background-color: @colour-brand-light;
+            z-index: @z-index-below;
+        }
+
+        > .anchor {
+            display: inline-block;
+            margin-left: -2em;
+            margin-right: 1em;
+
+            @media (max-width: @reflex-sm) {
+                display: none;
+            }
+        }
     }
 }

@@ -16,13 +16,17 @@ page '/*.txt', layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
-###
-# Helpers
-###
-
 # code syntax
+
+require "middleman-core/renderers/redcarpet"
+class CustomRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
+    def header(text, header_level)
+        "<h%s id=\"%s\"><a class=\"anchor\" href=\"#%s\">&#x1F517;</a>%s</h%s>" % [header_level, text.parameterize, text.parameterize, text, header_level]
+    end
+end
+
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true
+set :markdown, :autolink => true, :fenced_code_blocks => true, :smartypants => true, :renderer => CustomRenderer
 activate :syntax
 
 # generate search index
@@ -70,12 +74,28 @@ end
 # generate feed
 page "/feed.xml", layout: false
 
+###
+# Helpers
+###
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
 #     "Helping"
 #   end
 # end
+
+helpers do
+    def anchors( post )
+        File.readlines( post.source_file ).collect do |x|
+            if x =~ /^##\s(.*)/
+                $1
+            else
+                nil
+            end
+        end.select { |x| x }
+    end
+end
 
 # Build-specific configuration
 configure :build do

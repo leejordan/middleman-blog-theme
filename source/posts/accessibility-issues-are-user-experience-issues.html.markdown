@@ -8,6 +8,7 @@ tags: accessibility, css3, design, html5, javascript, ux
 This is a follow up post with lots of examples which is intended as part 2 to [my earlier post about what an accessible website is][1]. It's based on this definition of an accessible website:
 
 > An accessible website is one that allows as many different people and devices as possible to interact with it <footer>Lee Jordan</footer>
+
 ## Microsoft support
 
 ![how to enable javascript user search][2]
