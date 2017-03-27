@@ -31,6 +31,25 @@
 }
 
 //
+// Forms
+// ---
+.radio-checkbox-position() {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px \9; // ie9 hack
+}
+
+.placeholder(@color: @input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari and Chrome
+}
+
+//
 // Margins
 // ---
 .margins(@top, @right, @bottom, @left) {
@@ -171,7 +190,7 @@
     position: relative;
     vertical-align: middle;
     overflow: hidden;
-    padding: (@font-size-base * 0.6) (@font-size-base * 2);
+    padding: (@font-size-base / 2) (@font-size-base * 2);
     margin-bottom: (@font-size-base * 0.31);
     font-family: @font-family-sans-serif;
     font-size: @font-size-base;
@@ -181,8 +200,8 @@
     cursor: pointer;
     text-decoration: none;
     background-image: none;
-    background-color: @colour-brand-light;
-    color: @text-colour;
+    background-color: @colour-brand;
+    color: @colour-white;
     border: 0;
     border-radius: @dimension-border-radius;
 

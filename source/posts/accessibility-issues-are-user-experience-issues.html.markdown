@@ -87,41 +87,29 @@ Then this happened...
 
 I couldn't purchase the video because the "buy" button was not focusable by keyboard. Why is that button not focusable? The page is still available on the [web archive][14] so you can see for yourself if you want to but the reason is ultimately because the button was not really a button at all:
 
-<pre class="prettyprint"><div class="avod-button purchase" asin="B00C1BU7V8">
+```
+<div class="avod-button purchase" asin="B00C1BU7V8">
   <table class="avod-spritebox avod-one-click-btn" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr height="20">
         <td class="content" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -4px -211px; padding: 0px 10px 0px 30px;">
           1-Click<sup>®</sup> $3.99
-              
         </td>
-            
-        
         <td width="7" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -396px -211px; line-height: 0.1px;">
           <!-- -->
         </td>
-          
       </tr>
-        
-      
       <tr height="7">
         <td style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -4px -231px">
-          
         </td>
-            
-        
         <td width="7" style="vertical-align: bottom;  ; background: url(/web/20130330045046im_/http://g-ecx.images-amazon.com/images/G/01/digital/video/avod-1-5/dp-sprite-total._V156422041_.png) no-repeat -396px -231px; line-height: 0.1px;">
           <!-- -->
         </td>
-          
       </tr>
-      
     </tbody>
   </table>
-  
-   
 </div>
-</pre>
+```
 
 Just take a good look at this atrocity. *Obviously* it's a table wrapped in a div and made clickable with JavaScript
 

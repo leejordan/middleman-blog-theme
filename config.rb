@@ -21,7 +21,7 @@ page '/*.txt', layout: false
 require "middleman-core/renderers/redcarpet"
 class CustomRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
     def header(text, header_level)
-        "<h%s id=\"%s\"><a class=\"anchor\" href=\"#%s\">&#x1F517;</a>%s</h%s>" % [header_level, text.parameterize, text.parameterize, text, header_level]
+        "<h%s id=\"%s\">%s<a class=\"anchor\" href=\"#%s\">&#x1F517;</a></h%s>" % [header_level, text.parameterize, text, text.parameterize, header_level]
     end
 end
 
@@ -35,7 +35,7 @@ activate :search do |search|
   search.index_path = 'search/search.json'
   search.fields = {
     title: {index: true, boost: 100, store: true},
-    content: {index: true, boost: 50},
+    tags: {index: true, boost: 50},
     slug: {index: false, store: true},
     date: {index: false, store: true},
   }

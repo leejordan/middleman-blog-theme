@@ -15,6 +15,7 @@
     > p,
     > ul,
     > ol,
+    > h1,
     > h2,
     > h3,
     > h4,
@@ -24,32 +25,39 @@
         margin-right: auto;
     }
 
+    > h2,
+    > h3,
+    > h4,
+    > h5 {
+        max-width: @post-width;
+        .margins(5, 0, 2, 0);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     > h1 {
 
     }
 
-    > h2 {
-        display: block;
-        position: relative;
-        background-color: @colour-white;
-        z-index: @z-index-base;
-
-        &:before {
-            content: '';
-            display: block;
-            .position(absolute, -@container-padding, 0, -@container-padding, -(@container-padding * 8));
-            background-color: @colour-brand-light;
-            z-index: @z-index-below;
+    > h2,
+    > h3 {
+        &:hover {
+            > .anchor {
+                display: inline-block;
+            }
         }
 
         > .anchor {
-            display: inline-block;
-            margin-left: -2em;
-            margin-right: 1em;
+            text-decoration: none;
+            display: none;
+            margin-left: 1em;
+        }
+    }
 
-            @media (max-width: @reflex-sm) {
-                display: none;
-            }
+    > h4,
+    > h5 {
+        > .anchor {
+            display: none;
         }
     }
 }

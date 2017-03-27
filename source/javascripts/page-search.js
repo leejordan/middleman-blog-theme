@@ -33,7 +33,7 @@ function displayResults(searchIndex, contents) {
     var resultSample = $('[data-results-sample]');
     var resultSuggestions = $('[data-search-suggestions]');
 
-    if (jQuery.isEmptyObject(queryParams)) {
+    if (jQuery.isEmptyObject(queryParams) || results.length === 0) {
         resultsTerm.text(searchQuery);
         resultsIntro.addClass('hidden');
         resultsMessage.removeClass('hidden');

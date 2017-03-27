@@ -49,7 +49,8 @@
 @link-hover-colour:         darken(@link-colour, 10%);
 @link-decoration:           underline;
 @border-colour:             @colour-brand-light;
-@border-default:            2px solid @border-colour;
+@border-default-width:      2px;
+@border-default:            @border-default-width solid @border-colour;
 @title-logo-height:         60px;
 
 //
@@ -83,7 +84,7 @@
 @input-bg:                       @colour-white;
 
 @input-colour:                   @colour-grey;
-@input-border:                   @border-default;
+@input-border:                   @border-default-width solid @colour-brand;
 @input-border-radius:            @dimension-border-radius;
 
 @input-colour-placeholder:       @colour-grey-light;

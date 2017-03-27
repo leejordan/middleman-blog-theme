@@ -1,5 +1,5 @@
 ---
-title: What is an accessible website
+title: What is an accessible website?
 slug: what-is-an-accessible-website
 date: 2015-11-13
 tags: accessibility, css3, design, html5, javascript, ux
