@@ -2,9 +2,18 @@
 // Code highlight
 // ---
 
+:not(pre) > code {
+    white-space: nowrap;
+    padding: 0 .5em;
+    background-color: @colour-brand-light;
+    border: 2px solid @colour-brand;
+    border-radius: @dimension-border-radius;
+}
+
 .highlight {
     padding: @container-padding;
-    border: @border-default;
+    border: 2px solid @colour-brand;
+    border-radius: @dimension-border-radius;
 
     .hll { background-color: #ffffcc }
     .c { color: #60a0b0; font-style: italic } /* Comment */
@@ -67,5 +76,4 @@
     .vg { color: #bb60d5 } /* Name.Variable.Global */
     .vi { color: #bb60d5 } /* Name.Variable.Instance */
     .il { color: #40a070 } /* Literal.Number.Integer.Long */
-
 }

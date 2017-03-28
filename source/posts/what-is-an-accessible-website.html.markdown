@@ -1,8 +1,8 @@
 ---
 title: What is an accessible website?
 slug: what-is-an-accessible-website
-date: 2015-11-13
-tags: accessibility, css3, design, html5, javascript, ux
+date: 2016-03-05
+tags: accessibility, design, html5, javascript, ux
 ---
 
 Often when we try to define what an accessible website is, we default to the position that it's a website that can be used by a visually impaired person via a screen reader. If your website makes sense and can be navigated when it's read out by a screen reader then you have an "accessible website", you've ticked a box and your work here is done. Well done, let's all go to the bar.
@@ -13,7 +13,7 @@ I'd argue this is already an unethical, exclusive, and short sighted approach to
 
 So if you don't personally care about visually impaired people and have decided that you don't want their money after all then I am going to need to come up with a stronger definition by looking elsewhere. Here's how the web accessibility initiative answers this question:
 
-> Web accessibility means that people with disabilities can use the Web. <cite><a href="https://www.w3.org/WAI/intro/accessibility.php">https://www.w3.org/WAI/intro/accessibility.php</a></cite>
+> Web accessibility means that people with disabilities can use the Web.<br><cite>[w3.org][1]</cite>
 
 This is true and I have no argument with it but it's not a complete answer to the question so let's start again.
 
@@ -49,8 +49,6 @@ Here's a list of users who could potentially have accessibility issues. You can 
 This again is the point at which some people might roll their eyes and suggest that "you can't build the perfect website for every single user in the world" and they would be right. That would be impossible. No arguments here.
 
 What *is* possible however is not intentionally placing barriers in the way of your users if you can possibly avoid it.
-
-![broken door handle][1]
 
 To make a (perhaps slightly tortured) analogy that would be like opening an old-fashioned bricks and mortar shop and having a broken door handle. Customers could still enter if they tried the handle several times but why wouldn't you just fix the handle? Now imagine that instead of a broken handle there's a sign that says "you can only enter this shop if you use google chrome" and all of a sudden it's a great analogy and *I've just won a literary prize*.
 
@@ -140,7 +138,7 @@ There's much more and I could carry on and on coming up with examples but if you
 
 An accessible website is one that allows as many different people and devices as possible to interact with it successfully. That's really the heart of the matter.
 
- [1]: http://www.lendmeyourear.net/wp-content/uploads/shop-sign.jpg
+ [1]: https://www.w3.org/WAI/intro/accessibility.php">https://www.w3.org/WAI/intro/accessibility.php
  [2]: https://support.google.com/webmasters/answer/1061943?hl=en
  [3]: http://www.uiaccess.com/books.html
  [4]: https://jakearchibald.com/2013/progressive-enhancement-still-important/

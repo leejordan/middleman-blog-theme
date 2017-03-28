@@ -5,8 +5,14 @@
 table {
     width: 100%;
     max-width: 100%;
-    background-color: @table-bg;
+    background-color: transparent;
     margin-bottom: @dimension-spacing-default;
+    border: @table-border;
+    .lead();
+
+    > thead {
+        background-color: @table-bg;
+    }
 
     > thead,
     > tbody,

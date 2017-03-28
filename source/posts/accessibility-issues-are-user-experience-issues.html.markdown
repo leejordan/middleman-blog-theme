@@ -7,13 +7,13 @@ tags: accessibility, css3, design, html5, javascript, ux
 
 This is a follow up post with lots of examples which is intended as part 2 to [my earlier post about what an accessible website is][1]. It's based on this definition of an accessible website:
 
-> An accessible website is one that allows as many different people and devices as possible to interact with it <footer>Lee Jordan</footer>
+> An accessible website is one that allows as many different people and devices as possible to interact with it
 
 ## Microsoft support
 
-![how to enable javascript user search][2]
-
 This user is trying to find out how to enable JavaScript in his browser because it is currently disabled. As a loyal Microsoft fan they are using Bing.com and they make sure to follow the link to the microsoft support site because they love Microsoft.
+
+![how to enable javascript user search][2]
 
 Then this happens:
 
@@ -87,7 +87,7 @@ Then this happened...
 
 I couldn't purchase the video because the "buy" button was not focusable by keyboard. Why is that button not focusable? The page is still available on the [web archive][14] so you can see for yourself if you want to but the reason is ultimately because the button was not really a button at all:
 
-```
+```html
 <div class="avod-button purchase" asin="B00C1BU7V8">
   <table class="avod-spritebox avod-one-click-btn" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -111,7 +111,7 @@ I couldn't purchase the video because the "buy" button was not focusable by keyb
 </div>
 ```
 
-Just take a good look at this atrocity. *Obviously* it's a table wrapped in a div and made clickable with JavaScript
+Just take a good look at this atrocity. *Obviously* it's a table wrapped in a div and made clickable with JavaScript.
 
 ### How can this be fixed?
 

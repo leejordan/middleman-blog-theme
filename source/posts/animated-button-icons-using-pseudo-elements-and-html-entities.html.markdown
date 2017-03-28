@@ -1,0 +1,910 @@
+---
+title: Animated button icons using pseudo elements and html entities
+slug: animated-button-icons-using-pseudo-elements-and-html-entities
+date: 2015-05-08
+tags: animation, css3, html5, design
+---
+
+These buttons use `:before` and `:after` pseudo elements that contain html entities which animate on button hover or focus. Because html entities are already available client side this is a nice **lightweight** solution for adding a bit of extra character and context to your buttons.
+
+## Examples
+
+The core principle is the same in all these example buttons and I have created several variations to demonstrate the principle but they could be extended further to use all sorts of different transitions or animations. Hover with your mouse, or tap the buttons if you're on a touchscreen to see the animations.
+
+<button class="btn btn-prev">btn-prev</button> <button class="btn btn-next">btn-next</button> <button class="btn btn-download">btn-download</button> <button class="btn btn-reply">btn-reply</button> <button class="btn btn-external">btn-external</button> <button class="btn btn-submit">btn-submit</button> <button class="btn btn-code">btn-code</button> <button class="btn btn-tick">btn-tick</button> <button class="btn btn-cross">btn-cross</button> <button class="btn btn-email">btn-email</button> <button class="btn btn-comment">btn-comment</button> <button class="btn btn-quote">btn-quote</button> <button class="btn btn-question">btn-question</button> <button class="btn btn-star">btn-star</button>
+
+## How to create this effect
+
+I've simplified the css here to keep it clear but if you visit the github repo or inspect the css you will see I am also providing vendor prefixes and other css properties that would distract from the core bits that I am explaining here.
+
+### The button
+
+First we set up some defaults for the buttons themselves. There's a lot you can do to personalise the buttons so I've only included the bits that are relevant for the effect I am demonstrating. Html entities are essentially text so it's important to set up the button with some strict properties around how that text is displayed and that we're leaving enough padding at the sides for our icons.
+
+```css
+.btn {
+    transition: all 0.2s ease;
+    display: inline-block;
+    padding: 0.666em 2em;
+    font-size: 1em;
+    line-height: 1em;
+    background-color: #61c8f6;
+    color: #ffffff;
+}
+```
+
+### The icon
+
+Now we set up an animated icon on the button of which this is a very simple example. The default color of the icon is the same as the background color of the buttons so it is invisible until hover or focus at which point we apply our transform or animation.
+
+```css
+.btn-external:after {
+    content: "\2192";
+    position: absolute;
+    right: 0.75em;
+    font-family: arial, sans-serif;
+    color: #61c8f6;
+}
+
+.btn-external:hover:after,
+.btn-external:focus:after {
+    transform: rotate(-45deg);
+    color: #ffffff;
+}
+```
+
+Which gives us this: <button class="btn btn-external">btn-external</button>
+
+The above example uses a simple right arrow which is used as `&rarr;` when in html but in the content of your pseudo element you should use an escaped version of the hex reference of the same entity. To do this you just need to convert it like so: `&#x02192;` -> `content: "\2192";`.
+
+### Important information about font support
+
+W3c publishes a useful [list of common html entities][1] but you should be aware that some of these entities may be rendered differently in any custom fonts you may want to use. For that reason I recommend using a simple sans-serif font such as arial for the pseudo elements as in my tests they seemed to be more likely to render consistently across browsers. Some fonts do not include the more obscure entities so if you have problems with rendering these entities you will need to experiment with using different fonts and there is [a helpful source of information at fileformat.info][2] which should come in handy.
+
+## More info
+
+Check out the code on [github][3]
+
+<style>
+@-webkit-keyframes blink {
+  1%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  51%,
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes rotate {
+  1% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    -o-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes rotate {
+  1% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg);
+    -ms-transform: rotateZ(0deg);
+    -o-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    -o-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+a.btn-prev:before,
+button.btn-prev:before,
+a.btn-prev:after,
+button.btn-prev:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-prev:before,
+button.btn-prev:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-prev:hover:before,
+button.btn-prev:hover:before,
+a.btn-prev:focus:before,
+button.btn-prev:focus:before,
+a.btn-prev:hover:after,
+button.btn-prev:hover:after,
+a.btn-prev:focus:after,
+button.btn-prev:focus:after {
+  color: #ffffff;
+}
+a.btn-prev:before,
+button.btn-prev:before {
+  content: "\2190";
+  -webkit-transform: translateX(0.2em);
+  -moz-transform: translateX(0.2em);
+  -ms-transform: translateX(0.2em);
+  -o-transform: translateX(0.2em);
+  transform: translateX(0.2em);
+}
+a.btn-prev:hover:before,
+button.btn-prev:hover:before,
+a.btn-prev:focus:before,
+button.btn-prev:focus:before {
+  -webkit-transform: translateX(0em);
+  -moz-transform: translateX(0em);
+  -ms-transform: translateX(0em);
+  -o-transform: translateX(0em);
+  transform: translateX(0em);
+}
+a.btn-next:before,
+button.btn-next:before,
+a.btn-next:after,
+button.btn-next:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-next:before,
+button.btn-next:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-next:hover:before,
+button.btn-next:hover:before,
+a.btn-next:focus:before,
+button.btn-next:focus:before,
+a.btn-next:hover:after,
+button.btn-next:hover:after,
+a.btn-next:focus:after,
+button.btn-next:focus:after {
+  color: #ffffff;
+}
+a.btn-next:after,
+button.btn-next:after {
+  content: "\2192";
+  -webkit-transform: translateX(-0.2em);
+  -moz-transform: translateX(-0.2em);
+  -ms-transform: translateX(-0.2em);
+  -o-transform: translateX(-0.2em);
+  transform: translateX(-0.2em);
+}
+a.btn-next:hover:after,
+button.btn-next:hover:after,
+a.btn-next:focus:after,
+button.btn-next:focus:after {
+  -webkit-transform: translateX(0em);
+  -moz-transform: translateX(0em);
+  -ms-transform: translateX(0em);
+  -o-transform: translateX(0em);
+  transform: translateX(0em);
+}
+a.btn-reply:before,
+button.btn-reply:before,
+a.btn-reply:after,
+button.btn-reply:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-reply:before,
+button.btn-reply:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-reply:hover:before,
+button.btn-reply:hover:before,
+a.btn-reply:focus:before,
+button.btn-reply:focus:before,
+a.btn-reply:hover:after,
+button.btn-reply:hover:after,
+a.btn-reply:focus:after,
+button.btn-reply:focus:after {
+  color: #ffffff;
+}
+a.btn-reply:after,
+button.btn-reply:after {
+  content: "\21B5";
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+a.btn-reply:hover:after,
+button.btn-reply:hover:after,
+a.btn-reply:focus:after,
+button.btn-reply:focus:after {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+a.btn-download:before,
+button.btn-download:before,
+a.btn-download:after,
+button.btn-download:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-download:before,
+button.btn-download:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-download:hover:before,
+button.btn-download:hover:before,
+a.btn-download:focus:before,
+button.btn-download:focus:before,
+a.btn-download:hover:after,
+button.btn-download:hover:after,
+a.btn-download:focus:after,
+button.btn-download:focus:after {
+  color: #ffffff;
+}
+a.btn-download:after,
+button.btn-download:after {
+  content: "\2192";
+  font-size: 85%;
+}
+a.btn-download:hover:after,
+button.btn-download:hover:after,
+a.btn-download:focus:after,
+button.btn-download:focus:after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  border-right: 1px solid #fff;
+}
+a.btn-external:before,
+button.btn-external:before,
+a.btn-external:after,
+button.btn-external:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-external:before,
+button.btn-external:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-external:hover:before,
+button.btn-external:hover:before,
+a.btn-external:focus:before,
+button.btn-external:focus:before,
+a.btn-external:hover:after,
+button.btn-external:hover:after,
+a.btn-external:focus:after,
+button.btn-external:focus:after {
+  color: #ffffff;
+}
+a.btn-external:after,
+button.btn-external:after {
+  content: "\2192";
+}
+a.btn-external:hover:after,
+button.btn-external:hover:after,
+a.btn-external:focus:after,
+button.btn-external:focus:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+a.btn-submit:before,
+button.btn-submit:before,
+a.btn-submit:after,
+button.btn-submit:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-submit:before,
+button.btn-submit:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-submit:hover:before,
+button.btn-submit:hover:before,
+a.btn-submit:focus:before,
+button.btn-submit:focus:before,
+a.btn-submit:hover:after,
+button.btn-submit:hover:after,
+a.btn-submit:focus:after,
+button.btn-submit:focus:after {
+  color: #ffffff;
+}
+a.btn-submit:after,
+button.btn-submit:after {
+  content: "\00BB";
+  -webkit-transform: translateX(-0.2em) scale(1.4);
+  -moz-transform: translateX(-0.2em) scale(1.4);
+  -ms-transform: translateX(-0.2em) scale(1.4);
+  -o-transform: translateX(-0.2em) scale(1.4);
+  transform: translateX(-0.2em) scale(1.4);
+}
+a.btn-submit:hover:after,
+button.btn-submit:hover:after,
+a.btn-submit:focus:after,
+button.btn-submit:focus:after {
+  -webkit-transform: translateX(0em) scale(1.4);
+  -moz-transform: translateX(0em) scale(1.4);
+  -ms-transform: translateX(0em) scale(1.4);
+  -o-transform: translateX(0em) scale(1.4);
+  transform: translateX(0em) scale(1.4);
+}
+a.btn-code:before,
+button.btn-code:before,
+a.btn-code:after,
+button.btn-code:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-code:before,
+button.btn-code:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-code:hover:before,
+button.btn-code:hover:before,
+a.btn-code:focus:before,
+button.btn-code:focus:before,
+a.btn-code:hover:after,
+button.btn-code:hover:after,
+a.btn-code:focus:after,
+button.btn-code:focus:after {
+  color: #ffffff;
+}
+a.btn-code:before,
+button.btn-code:before {
+  left: auto;
+  right: 1em;
+  -webkit-transform: scaleX(0.75);
+  -moz-transform: scaleX(0.75);
+  -ms-transform: scaleX(0.75);
+  -o-transform: scaleX(0.75);
+  transform: scaleX(0.75);
+  content: "\003E";
+}
+a.btn-code:after,
+button.btn-code:after {
+  right: 0.5em;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  content: "\005F";
+  -webkit-animation: blink 1s infinite normal linear;
+  -moz-animation: blink 1s infinite normal linear;
+  -ms-animation: blink 1s infinite normal linear;
+  animation: blink 1s infinite normal linear;
+}
+a.btn-tick:before,
+button.btn-tick:before,
+a.btn-tick:after,
+button.btn-tick:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-tick:before,
+button.btn-tick:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-tick:hover:before,
+button.btn-tick:hover:before,
+a.btn-tick:focus:before,
+button.btn-tick:focus:before,
+a.btn-tick:hover:after,
+button.btn-tick:hover:after,
+a.btn-tick:focus:after,
+button.btn-tick:focus:after {
+  color: #ffffff;
+}
+a.btn-tick:after,
+button.btn-tick:after {
+  content: "\2713";
+  -webkit-transform: rotatey(90deg);
+  -moz-transform: rotatey(90deg);
+  -ms-transform: rotatey(90deg);
+  -o-transform: rotatey(90deg);
+  transform: rotatey(90deg);
+}
+a.btn-tick:hover:after,
+button.btn-tick:hover:after,
+a.btn-tick:focus:after,
+button.btn-tick:focus:after {
+  -webkit-transform: rotatey(0deg);
+  -moz-transform: rotatey(0deg);
+  -ms-transform: rotatey(0deg);
+  -o-transform: rotatey(0deg);
+  transform: rotatey(0deg);
+}
+a.btn-cross:before,
+button.btn-cross:before,
+a.btn-cross:after,
+button.btn-cross:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-cross:before,
+button.btn-cross:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-cross:hover:before,
+button.btn-cross:hover:before,
+a.btn-cross:focus:before,
+button.btn-cross:focus:before,
+a.btn-cross:hover:after,
+button.btn-cross:hover:after,
+a.btn-cross:focus:after,
+button.btn-cross:focus:after {
+  color: #ffffff;
+}
+a.btn-cross:after,
+button.btn-cross:after {
+  content: "\2717";
+  -webkit-transform: rotatey(90deg);
+  -moz-transform: rotatey(90deg);
+  -ms-transform: rotatey(90deg);
+  -o-transform: rotatey(90deg);
+  transform: rotatey(90deg);
+}
+a.btn-cross:hover:after,
+button.btn-cross:hover:after,
+a.btn-cross:focus:after,
+button.btn-cross:focus:after {
+  -webkit-transform: rotatey(0deg);
+  -moz-transform: rotatey(0deg);
+  -ms-transform: rotatey(0deg);
+  -o-transform: rotatey(0deg);
+  transform: rotatey(0deg);
+}
+a.btn-close:before,
+button.btn-close:before,
+a.btn-close:after,
+button.btn-close:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-close:before,
+button.btn-close:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-close:hover:before,
+button.btn-close:hover:before,
+a.btn-close:focus:before,
+button.btn-close:focus:before,
+a.btn-close:hover:after,
+button.btn-close:hover:after,
+a.btn-close:focus:after,
+button.btn-close:focus:after {
+  color: #ffffff;
+}
+a.btn-close:after,
+button.btn-close:after {
+  content: "x";
+  -webkit-transform: rotatex(90deg);
+  -moz-transform: rotatex(90deg);
+  -ms-transform: rotatex(90deg);
+  -o-transform: rotatex(90deg);
+  transform: rotatex(90deg);
+}
+a.btn-close:hover:after,
+button.btn-close:hover:after,
+a.btn-close:focus:after,
+button.btn-close:focus:after {
+  -webkit-transform: rotatex(0deg);
+  -moz-transform: rotatex(0deg);
+  -ms-transform: rotatex(0deg);
+  -o-transform: rotatex(0deg);
+  transform: rotatex(0deg);
+}
+a.btn-email:before,
+button.btn-email:before,
+a.btn-email:after,
+button.btn-email:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-email:before,
+button.btn-email:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-email:hover:before,
+button.btn-email:hover:before,
+a.btn-email:focus:before,
+button.btn-email:focus:before,
+a.btn-email:hover:after,
+button.btn-email:hover:after,
+a.btn-email:focus:after,
+button.btn-email:focus:after {
+  color: #ffffff;
+}
+a.btn-email:after,
+button.btn-email:after {
+  content: "\0040";
+  -webkit-transform: rotatez(90deg);
+  -moz-transform: rotatez(90deg);
+  -ms-transform: rotatez(90deg);
+  -o-transform: rotatez(90deg);
+  transform: rotatez(90deg);
+}
+a.btn-email:hover:after,
+button.btn-email:hover:after,
+a.btn-email:focus:after,
+button.btn-email:focus:after {
+  -webkit-transform: rotatez(0deg);
+  -moz-transform: rotatez(0deg);
+  -ms-transform: rotatez(0deg);
+  -o-transform: rotatez(0deg);
+  transform: rotatez(0deg);
+}
+a.btn-comment:before,
+button.btn-comment:before,
+a.btn-comment:after,
+button.btn-comment:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-comment:before,
+button.btn-comment:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-comment:hover:before,
+button.btn-comment:hover:before,
+a.btn-comment:focus:before,
+button.btn-comment:focus:before,
+a.btn-comment:hover:after,
+button.btn-comment:hover:after,
+a.btn-comment:focus:after,
+button.btn-comment:focus:after {
+  color: #ffffff;
+}
+a.btn-comment:after,
+button.btn-comment:after {
+  content: "\2026";
+  -webkit-transform: translateX(2em);
+  -moz-transform: translateX(2em);
+  -ms-transform: translateX(2em);
+  -o-transform: translateX(2em);
+  transform: translateX(2em);
+}
+a.btn-comment:hover:after,
+button.btn-comment:hover:after,
+a.btn-comment:focus:after,
+button.btn-comment:focus:after {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+a.btn-quote:before,
+button.btn-quote:before,
+a.btn-quote:after,
+button.btn-quote:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-quote:before,
+button.btn-quote:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-quote:hover:before,
+button.btn-quote:hover:before,
+a.btn-quote:focus:before,
+button.btn-quote:focus:before,
+a.btn-quote:hover:after,
+button.btn-quote:hover:after,
+a.btn-quote:focus:after,
+button.btn-quote:focus:after {
+  color: #ffffff;
+}
+a.btn-quote:before,
+button.btn-quote:before {
+  left: 1em;
+  content: "\201C";
+  -webkit-transform: translateX(-2em);
+  -moz-transform: translateX(-2em);
+  -ms-transform: translateX(-2em);
+  -o-transform: translateX(-2em);
+  transform: translateX(-2em);
+}
+a.btn-quote:after,
+button.btn-quote:after {
+  right: 1em;
+  content: "\201D";
+  -webkit-transform: translateX(2em);
+  -moz-transform: translateX(2em);
+  -ms-transform: translateX(2em);
+  -o-transform: translateX(2em);
+  transform: translateX(2em);
+}
+a.btn-quote:hover:before,
+button.btn-quote:hover:before,
+a.btn-quote:focus:before,
+button.btn-quote:focus:before {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+a.btn-quote:hover:after,
+button.btn-quote:hover:after,
+a.btn-quote:focus:after,
+button.btn-quote:focus:after {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+a.btn-question:before,
+button.btn-question:before,
+a.btn-question:after,
+button.btn-question:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-question:before,
+button.btn-question:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-question:hover:before,
+button.btn-question:hover:before,
+a.btn-question:focus:before,
+button.btn-question:focus:before,
+a.btn-question:hover:after,
+button.btn-question:hover:after,
+a.btn-question:focus:after,
+button.btn-question:focus:after {
+  color: #ffffff;
+}
+a.btn-question:after,
+button.btn-question:after {
+  content: "\003F";
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+a.btn-question:hover:after,
+button.btn-question:hover:after,
+a.btn-question:focus:after,
+button.btn-question:focus:after {
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  -ms-transform: rotateZ(0deg);
+  -o-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+}
+a.btn-star:before,
+button.btn-star:before,
+a.btn-star:after,
+button.btn-star:after {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 0.75em;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  color: #00b5e9;
+}
+a.btn-star:before,
+button.btn-star:before {
+  right: auto;
+  left: 0.75em;
+}
+a.btn-star:hover:before,
+button.btn-star:hover:before,
+a.btn-star:focus:before,
+button.btn-star:focus:before,
+a.btn-star:hover:after,
+button.btn-star:hover:after,
+a.btn-star:focus:after,
+button.btn-star:focus:after {
+  color: #ffffff;
+}
+a.btn-star:after,
+button.btn-star:after {
+  content: "\2605";
+  font-size: 80%;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+a.btn-star:hover:after,
+button.btn-star:hover:after,
+a.btn-star:focus:after,
+button.btn-star:focus:after {
+  -webkit-transform: rotateZ(0);
+  -moz-transform: rotateZ(0);
+  -ms-transform: rotateZ(0);
+  -o-transform: rotateZ(0);
+  transform: rotateZ(0);
+}
+</style>
+
+[1]: http://dev.w3.org/html5/html-author/charref
+[2]: http://www.fileformat.info/info/unicode/char/search.html
+[3]: https://github.com/leejordan/Button-animations

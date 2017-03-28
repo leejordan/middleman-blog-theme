@@ -21,7 +21,11 @@ page '/*.txt', layout: false
 require "middleman-core/renderers/redcarpet"
 class CustomRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
     def header(text, header_level)
-        "<h%s id=\"%s\">%s<a class=\"anchor\" href=\"#%s\">&#x1F517;</a></h%s>" % [header_level, text.parameterize, text, text.parameterize, header_level]
+        "<h%s id=\"%s\"><a class=\"anchor\" href=\"#%s\" title=\"link to heading\">#</a>%s</h%s>" % [header_level, text.parameterize, text.parameterize, text, header_level]
+    end
+
+    def image(link, title, alt_text)
+        "<div><img src=\"%s\" alt=\"%s\"></div>" % [link, alt_text]
     end
 end
 
@@ -84,18 +88,6 @@ page "/feed.xml", layout: false
 #     "Helping"
 #   end
 # end
-
-helpers do
-    def anchors( post )
-        File.readlines( post.source_file ).collect do |x|
-            if x =~ /^##\s(.*)/
-                $1
-            else
-                nil
-            end
-        end.select { |x| x }
-    end
-end
 
 # Build-specific configuration
 configure :build do

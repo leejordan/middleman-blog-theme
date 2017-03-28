@@ -2,10 +2,12 @@
 title: Tagged posts
 ---
 
+<% content_for(:title, pluralize(page_articles.size, 'post') + " tagged as " + tagname ) %>
+
 <main class="page-section">
     <div class="grid">
         <div class="grid__col-xs-12 container--content">
-            <h1><%= page_articles.size %> posts tagged as '<%= tagname %>'</h1>
+            <h1><%= pluralize(page_articles.size, 'post') %> tagged as '<%= tagname %>'</h1>
         </div>
     </div>
     <% page_articles.each_with_index do |article, index| %>

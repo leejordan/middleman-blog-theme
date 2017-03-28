@@ -1,8 +1,8 @@
 ---
 title: Layering CSS so we can use flexbox now
 slug: layering-CSS-so-we-can-use-flexbox-now
-date: 2016-03-18
-tags: css3, design, html5
+date: 2016-02-02
+tags: css3, responsive, html5, flexbox
 ---
 
 We can start using flexbox right now while still having a similar layout in older browsers by taking advantage of the "cascading" part of cascading style sheets. In this article I'm going to explain how we can take advantage of some of the similarities between flexbox and inline-block layouts to achieve a progressively enhanced layout that looks good in all browsers.
@@ -22,7 +22,7 @@ The browser that parses this CSS file will use the last defined property that it
 
 This is what is happening when you see crossed out declarations in web inspector like this:
 
-<div><img src="http://www.lendmeyourear.net/wp-content/uploads/web-inspector.png" alt="web-inspector" width="125" height="29" class="size-full wp-image-1428" /></div>
+<img src="http://www.lendmeyourear.net/wp-content/uploads/web-inspector.png" alt="web-inspector" width="125" height="29" class="size-full wp-image-1428" />
 
 This is exactly the behaviour that allows us to specify multiple vendor prefixes and not break anything - the browsers will only use those properties that they understand and ignore those that they don't understand.
 
