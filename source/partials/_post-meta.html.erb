@@ -12,16 +12,12 @@
     <div class="grid">
         <% if current_article.previous_article %>
             <div class="grid__col-auto grid--order-2 grid--order-1-xs">
-                <a href="<%= current_article.previous_article.url %>" class="grid__cell button button--prev">
-                    <p>Previous post: <%= current_article.previous_article.title %></p>
-                </a>
+                <%= link_to 'Previous post: ' + current_article.previous_article.title, current_article.previous_article.url, :class => 'grid__cell button button--prev' %>
             </div>
         <% end %>
         <% if current_article.next_article %>
             <div class="grid__col-auto grid--order-1 grid--order-2-xs">
-                <a href="<%= current_article.next_article.url %>" class="grid__cell button button--next">
-                    <p>Next post: <%= current_article.next_article.title %></p>
-                </a>
+                <%= link_to 'Next post: ' + current_article.next_article.title, current_article.next_article.url, :class => 'grid__cell button button--next' %>
             </div>
         <% end %>
     </div>

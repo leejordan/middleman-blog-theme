@@ -1,4 +1,10 @@
 ###
+# Settings
+###
+set :relative_links, true
+activate :relative_assets
+
+###
 # Page options, layouts, aliases and proxies
 ###
 
@@ -16,7 +22,9 @@ page '/*.txt', layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
-# code syntax
+###
+# Code syntax
+###
 
 require "middleman-core/renderers/redcarpet"
 class CustomRenderer < Middleman::Renderers::MiddlemanRedcarpetHTML
@@ -33,7 +41,9 @@ set :markdown_engine, :redcarpet
 set :markdown, :autolink => true, :fenced_code_blocks => true, :smartypants => true, :renderer => CustomRenderer
 activate :syntax
 
-# generate search index
+###
+# Generate search index
+###
 activate :search do |search|
   search.resources = ['posts']
   search.index_path = 'search/search.json'

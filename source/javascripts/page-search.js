@@ -56,7 +56,7 @@ function displayResults(searchIndex, contents) {
             resultSampleTitle.text(contents[resultId]['title']);
             resultSampleDate.text(contents[resultId]['date']);
             resultSampleLink.attr('href', contents[resultId]['slug'].toLowerCase() + '.html');
-            resultSampleImg.attr('src', '/images/' + contents[resultId]['slug'] + '/cover.jpg');
+            resultSampleImg.attr('src', 'images/' + contents[resultId]['slug'] + '/cover.jpg');
             resultsElem.append(resultSampleClone);
             loader.addClass('hidden');
             resultSampleClone.removeClass('hidden');

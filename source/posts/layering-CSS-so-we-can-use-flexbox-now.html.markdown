@@ -311,7 +311,7 @@ Here's a [page with all these examples on it][1] so feel free to test this out y
 
 ### Without flexbox support
 
-<img src="http://www.lendmeyourear.net/wp-content/uploads/inline-block1.png" alt="inline-block" width="475" height="285" class="size-large wp-image-1427" />
+<img src="http://www.lendmeyourear.net/wp-content/uploads/inline-block1.png" alt="inline-block" />
 
 So there you have it. We can experiment with all sorts of CSS properties in this way and have browsers take advantage of the properties that they support.
 
