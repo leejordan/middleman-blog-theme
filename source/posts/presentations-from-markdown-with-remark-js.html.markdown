@@ -30,7 +30,7 @@ By way of example, I wrote [this post in markdown][3] and [converted it to remar
 You can change slides with your arrow keys, space bar or mouse wheel (or swipe on your tablet/phone). Press `p` to see presenter mode and `c` to see the cloned presentation for your viewers.
 
 <div class="embed-responsive embed-responsive-16by9" style="border: 1px solid #ccc;">
-  <iframe name="presentation example" src="http://www.lendmeyourear.net/wp-content/uploads/markdown-remark-slides.html#1"></iframe>
+  <iframe name="presentation example" src="http://www.lendmeyourear.net/middleman/media/markdown-remark-slides.html#1"></iframe>
 </div>
 
 Here's a further [example of the same presentation in a branded theme][5] with custom fonts and the company logo on every page.
@@ -226,11 +226,11 @@ This way of creating presentations has turned something that used to be a chore 
  [1]: http://daringfireball.net/projects/markdown/syntax
  [2]: http://remarkjs.com/
  [3]: https://gist.github.com/leejordan/9f4ff825ad2631212fcc
- [4]: http://www.lendmeyourear.net/wp-content/uploads/markdown-remark-slides.html
- [5]: http://www.lendmeyourear.net/wp-content/uploads/markdown-remark-slides-graze.html
- [6]: http://www.lendmeyourear.net/wp-content/uploads/remark-template-basic.css
+ [4]: http://www.lendmeyourear.net/middleman/media/markdown-remark-slides.html
+ [5]: http://www.lendmeyourear.net/middleman/media/markdown-remark-slides-graze.html
+ [6]: http://www.lendmeyourear.net/middleman/media/remark-template-basic.css
  [7]: https://github.com/gnab/remark/wiki/Markdown
  [8]: https://gnab.github.io/remark/downloads/remark-latest.min.js
- [9]: http://www.lendmeyourear.net/wp-content/uploads/remark-template-graze.css
+ [9]: http://www.lendmeyourear.net/middleman/media/remark-template-graze.css
  [10]: http://www.fontsquirrel.com/tools/webfont-generator
  [11]: http://www.base64-image.de/

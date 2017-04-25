@@ -14,10 +14,10 @@ The best way to get the latest version of this is [on github][1] or you can view
 Click or tap on the characters below to see their animations
 
 <p id="stage">
-    <img id="mr-punnet" class="animate hop click-shake" src="http://www.lendmeyourear.net/wp-content/uploads/mr-punnet.png" alt="mr-punnet" />
-    <img id="monsieur-le-box" class="animate hop click-jump" src="http://www.lendmeyourear.net/wp-content/uploads/monsieur-le-box.png" alt="monsieur-le-box" />
-    <img id="letterbox-face" class="animate hop click-flip" src="http://www.lendmeyourear.net/wp-content/uploads/letterbox-face.png" alt="letterbox-face" />
-    <img id="goody-girl" class="animate hover click-fly" src="http://www.lendmeyourear.net/wp-content/uploads/goody-girl.png" alt="goody girl" />
+    <img id="mr-punnet" class="animate hop click-shake" src="http://www.lendmeyourear.net/middleman/media/mr-punnet.png" alt="mr-punnet" />
+    <img id="monsieur-le-box" class="animate hop click-jump" src="http://www.lendmeyourear.net/middleman/media/monsieur-le-box.png" alt="monsieur-le-box" />
+    <img id="letterbox-face" class="animate hop click-flip" src="http://www.lendmeyourear.net/middleman/media/letterbox-face.png" alt="letterbox-face" />
+    <img id="goody-girl" class="animate hover click-fly" src="http://www.lendmeyourear.net/middleman/media/goody-girl.png" alt="goody girl" />
 </p>
 
 

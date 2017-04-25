@@ -19,7 +19,7 @@ Try to stick to the standard web safe fonts where possible. Using fancy fonts fo
 
 ## 3) Use guides (and stick to them)
 
-<img src="http://www.lendmeyourear.net/wp-content/uploads/2010/10/guides.jpg" alt="" title="guides" width="350" height="338">
+<img src="http://www.lendmeyourear.net/middleman/media/2010/10/guides.jpg" alt="" title="guides" width="350" height="338">
 
 Once you have your design more or less finalised and it's out of the conceptual phase, create some guides and make sure everything lines up nicely along those guides. Clearly laying out the different sections on the page with guidelines will ensure you can maintain consistency of layout across multiple page designs and therefore allow the web developer to clearly understand and implement the structural layout of the pages.
 

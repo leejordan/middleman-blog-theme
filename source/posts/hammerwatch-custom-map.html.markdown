@@ -56,7 +56,7 @@ If you're interested in learning how to create Hammerwatch custom campaigns or m
 *   [Hammerwatch editor startup guide][6]
 *   [Hammerwatch Editor tutorial videos][8]
 
- [1]: http://www.lendmeyourear.net/wp-content/uploads/tricks_and_traps1.1.zip
+ [1]: http://www.lendmeyourear.net/middleman/media/tricks_and_traps1.1.zip
  [2]: http://steamcommunity.com/sharedfiles/filedetails/?id=346064809
  [3]: http://en.wikipedia.org/wiki/Gauntlet_(1985_video_game)
  [4]: http://www.magickagame.com/

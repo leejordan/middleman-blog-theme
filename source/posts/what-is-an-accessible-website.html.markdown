@@ -149,13 +149,13 @@ An accessible website is one that allows as many different people and devices as
  [9]: http://www.youtube.com/watch?v=AmUPhEVWu_E
  [10]: http://www.w3.org/QA/Tips/altAttribute
  [11]: http://www.smashingmagazine.com/2009/03/10-principles-for-readable-web-typography/
- [12]: http://www.lendmeyourear.net/wp-content/uploads/font-rendering.png
+ [12]: http://www.lendmeyourear.net/middleman/media/font-rendering.png
  [13]: http://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333
- [14]: http://www.lendmeyourear.net/wp-content/uploads/low-contrast-copy.png
+ [14]: http://www.lendmeyourear.net/middleman/media/low-contrast-copy.png
  [15]: http://www.nngroup.com/articles/clickable-elements/
  [16]: https://chrome.google.com/webstore/detail/the-squint-test/gppnipfbappicilfniaimcnagbpfflpg?hl=en
- [17]: http://www.lendmeyourear.net/wp-content/uploads/squint-test-1.png
- [18]: http://www.lendmeyourear.net/wp-content/uploads/squint-test-2.png
+ [17]: http://www.lendmeyourear.net/middleman/media/squint-test-1.png
+ [18]: http://www.lendmeyourear.net/middleman/media/squint-test-2.png
  [19]: https://www.gov.uk/service-manual/making-software/progressive-enhancement.html
  [20]: http://www.w3.org/TR/html5/
  [21]: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA

@@ -82,7 +82,7 @@ In 2013, shortly after joining Amazon, I went to their seattle office and was st
 Then this happened...
 
 <div class="embed-responsive embed-responsive-16by9">
-  <video src="http://www.lendmeyourear.net/wp-content/uploads/amazon.mp4" loop controls style="width: 100%;"> Your browser can't play this video but you can [download it][14]. </video>
+  <video src="http://www.lendmeyourear.net/middleman/media/amazon.mp4" loop controls style="width: 100%;"> Your browser can't play this video but you can [download it][14]. </video>
 </div>
 
 I couldn't purchase the video because the "buy" button was not focusable by keyboard. Why is that button not focusable? The page is still available on the [web archive][14] so you can see for yourself if you want to but the reason is ultimately because the button was not really a button at all:
@@ -169,19 +169,19 @@ The good news is that making accessible websites *is* compatible with global cap
 When you frame accessiblity issues as user experience issues, it becomes easier to make a business case for spending time on it.
 
  [1]: http://www.lendmeyourear.net/what-is-an-accessible-website.html
- [2]: http://www.lendmeyourear.net/wp-content/uploads/javascript-1.png
- [3]: http://www.lendmeyourear.net/wp-content/uploads/javascript-2.png
- [4]: http://www.lendmeyourear.net/wp-content/uploads/hacker.png
+ [2]: http://www.lendmeyourear.net/middleman/media/javascript-1.png
+ [3]: http://www.lendmeyourear.net/middleman/media/javascript-2.png
+ [4]: http://www.lendmeyourear.net/middleman/media/hacker.png
  [5]: http://www.w3.org/TR/WCAG20/
  [6]: http://webaim.org/resources/contrastchecker/?fcolor=828282&bcolor=f6f6ef
- [7]: http://www.lendmeyourear.net/wp-content/uploads/hacker-winchrom-vga.png
- [8]: http://www.lendmeyourear.net/wp-content/uploads/hacker-fix.png
+ [7]: http://www.lendmeyourear.net/middleman/media/hacker-winchrom-vga.png
+ [8]: http://www.lendmeyourear.net/middleman/media/hacker-fix.png
  [9]: http://lush.com
- [10]: http://www.lendmeyourear.net/wp-content/uploads/text-images.png
- [11]: http://www.lendmeyourear.net/wp-content/uploads/text-images-2.png
+ [10]: http://www.lendmeyourear.net/middleman/media/text-images.png
+ [11]: http://www.lendmeyourear.net/middleman/media/text-images-2.png
  [12]: https://www.nngroup.com/articles/text-over-images/
- [13]: http://www.lendmeyourear.net/wp-content/uploads/download-chrome-error.png
+ [13]: http://www.lendmeyourear.net/middleman/media/download-chrome-error.png
  [14]: http://web.archive.org/web/20130330045046/http://www.amazon.com/Lincoln/dp/B00C1BU7V8
  [15]: http://graze.com
- [16]: http://www.lendmeyourear.net/wp-content/uploads/graze-comparison.jpg
- [17]: http://www.lendmeyourear.net/wp-content/uploads/graze-stats.png
+ [16]: http://www.lendmeyourear.net/middleman/media/graze-comparison.jpg
+ [17]: http://www.lendmeyourear.net/middleman/media/graze-stats.png

@@ -22,7 +22,7 @@ The browser that parses this CSS file will use the last defined property that it
 
 This is what is happening when you see crossed out declarations in web inspector like this:
 
-<img src="http://www.lendmeyourear.net/wp-content/uploads/web-inspector.png" alt="web-inspector" width="125" height="29" class="size-full wp-image-1428" />
+<img src="http://www.lendmeyourear.net/middleman/media/web-inspector.png" alt="web-inspector" width="125" height="29" class="size-full wp-image-1428" />
 
 This is exactly the behaviour that allows us to specify multiple vendor prefixes and not break anything - the browsers will only use those properties that they understand and ignore those that they don't understand.
 
@@ -307,11 +307,11 @@ Here's a [page with all these examples on it][1] so feel free to test this out y
 
 ### With flexbox support
 
-<img src="http://www.lendmeyourear.net/wp-content/uploads/flexbox1.png" alt="flexbox" width="476" height="285" class="size-full wp-image-1426" />
+<img src="http://www.lendmeyourear.net/middleman/media/flexbox1.png" alt="flexbox" width="476" height="285" class="size-full wp-image-1426" />
 
 ### Without flexbox support
 
-<img src="http://www.lendmeyourear.net/wp-content/uploads/inline-block1.png" alt="inline-block" />
+<img src="http://www.lendmeyourear.net/middleman/media/inline-block1.png" alt="inline-block" />
 
 So there you have it. We can experiment with all sorts of CSS properties in this way and have browsers take advantage of the properties that they support.
 
