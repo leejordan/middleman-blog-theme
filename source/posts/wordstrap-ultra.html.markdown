@@ -56,7 +56,7 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
- [1]: http://www.lendmeyourear.net/files/WordStrapULTRA.zip
+ [1]: http://www.lendmeyourear.net/media/WordStrapULTRA.zip
  [2]: http://www.lendmeyourear.net/WordStrapULTRA/
  [3]: http://codex.wordpress.org/Installing_WordPress
  [4]: http://lendmeyourear.net

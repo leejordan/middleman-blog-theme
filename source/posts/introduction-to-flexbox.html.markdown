@@ -327,35 +327,35 @@ Flexbox isn't globally supported yet so it's natural to want to provide a fallba
 *   Some images used from [this flexbox article][35]
 
  [1]: http://caniuse.com/#search=flex
- [2]: http://www.lendmeyourear.net/middleman/media/inline.png
- [3]: http://www.lendmeyourear.net/middleman/media/block.png
- [4]: http://www.lendmeyourear.net/middleman/media/inline-block.png
+ [2]: http://www.lendmeyourear.net/media/inline.png
+ [3]: http://www.lendmeyourear.net/media/block.png
+ [4]: http://www.lendmeyourear.net/media/inline-block.png
  [5]: http://yuilibrary.com/yui/docs/cssgrids/
- [6]: http://www.lendmeyourear.net/middleman/media/inline-block-grid.png
+ [6]: http://www.lendmeyourear.net/media/inline-block-grid.png
  [7]: http://caniuse.com/#search=inline-block
  [8]: https://css-tricks.com/fighting-the-space-between-inline-block-elements/#comment-166444
  [9]: http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/
- [10]: http://www.lendmeyourear.net/middleman/media/float-example.png
+ [10]: http://www.lendmeyourear.net/media/float-example.png
  [11]: http://getbootstrap.com/
  [12]: http://foundation.zurb.com/
- [13]: http://www.lendmeyourear.net/middleman/media/float-grid.png
+ [13]: http://www.lendmeyourear.net/media/float-grid.png
  [14]: http://caniuse.com/#search=css%202.1
- [15]: http://www.lendmeyourear.net/middleman/media/float-noclear.png
+ [15]: http://www.lendmeyourear.net/media/float-noclear.png
  [16]: https://css-tricks.com/all-about-floats/
- [17]: http://www.lendmeyourear.net/middleman/media/flexbox-axes.png
- [18]: http://www.lendmeyourear.net/middleman/media/flexbox.png
- [19]: http://www.lendmeyourear.net/middleman/media/flexbox-direction-row-reverse.png
- [20]: http://www.lendmeyourear.net/middleman/media/flexbox-direction-column.png
- [21]: http://www.lendmeyourear.net/middleman/media/flexbox-nested.png
- [22]: http://www.lendmeyourear.net/middleman/media/flexbox-order.png
- [23]: http://www.lendmeyourear.net/middleman/media/flexbox-align-stretch.png
- [24]: http://www.lendmeyourear.net/middleman/media/flexbox-align-start.png
- [25]: http://www.lendmeyourear.net/middleman/media/flexbox-align-end.png
- [26]: http://www.lendmeyourear.net/middleman/media/flexbox-justify-space-between.png
- [27]: http://www.lendmeyourear.net/middleman/media/flexbox-justify-space-around.png
- [28]: http://www.lendmeyourear.net/middleman/media/flex-grow.png
- [29]: http://www.lendmeyourear.net/middleman/media/margin-collapse.png
- [30]: http://www.lendmeyourear.net/middleman/media/flexbox-footer.png
+ [17]: http://www.lendmeyourear.net/media/flexbox-axes.png
+ [18]: http://www.lendmeyourear.net/media/flexbox.png
+ [19]: http://www.lendmeyourear.net/media/flexbox-direction-row-reverse.png
+ [20]: http://www.lendmeyourear.net/media/flexbox-direction-column.png
+ [21]: http://www.lendmeyourear.net/media/flexbox-nested.png
+ [22]: http://www.lendmeyourear.net/media/flexbox-order.png
+ [23]: http://www.lendmeyourear.net/media/flexbox-align-stretch.png
+ [24]: http://www.lendmeyourear.net/media/flexbox-align-start.png
+ [25]: http://www.lendmeyourear.net/media/flexbox-align-end.png
+ [26]: http://www.lendmeyourear.net/media/flexbox-justify-space-between.png
+ [27]: http://www.lendmeyourear.net/media/flexbox-justify-space-around.png
+ [28]: http://www.lendmeyourear.net/media/flex-grow.png
+ [29]: http://www.lendmeyourear.net/media/margin-collapse.png
+ [30]: http://www.lendmeyourear.net/media/flexbox-footer.png
  [31]: http://leejordan.github.io/reflex/docs/
  [32]: http://www.w3.org/TR/css-flexbox-1/
  [33]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes
