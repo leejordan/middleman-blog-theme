@@ -85,6 +85,10 @@
 .font-size(@size) {
     font-size: ( @font-size-base * @size );
     font-size: ~"@{size}rem";
+
+    @media (max-width: @reflex-xs-max) {
+        font-size: ( @font-size-small * @size );
+    }
 }
 
 .small() {
