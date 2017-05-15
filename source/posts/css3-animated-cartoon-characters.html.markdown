@@ -2,7 +2,7 @@
 title: CSS animated cartoon characters
 slug: css3-animated-cartoon-characters
 date: 2014-01-21
-tags: css3, animtation, design, responsive, javascript
+tags: css3, animation, design, responsive, javascript
 ---
 
 There are a lot of good resources out there for css animations, most notably the excellent [animate.css][3] but I needed to create some animations for some kid's cartoon characters for an ongoing project at work and this was the result. I decided to throw it up on github in case it is useful to anybody else.

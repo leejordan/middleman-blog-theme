@@ -51,12 +51,17 @@
 .intro-portrait {
     .pull-right();
     .img-responsive();
-    .hidden-xxs();
     margin-left: 1em !important;
+
+    @media (max-width: @reflex-xs) {
+        max-width: 120px;
+    }
 }
 
 .intro-portrait--offset {
-    margin-top: -120px !important;
+    @media (min-width: @reflex-xs) {
+         margin-top: -120px !important;
+    }
 }
 
 // Loader

@@ -1,0 +1,15 @@
+{
+    "all": [{
+        "name": "10k tube",
+        "slug": "10k-tube",
+        "description": "My entry for the 10k apart competition where the challenge was to build a compelling web experience that can be delivered in 10kB and works without JavaScript.",
+        "url": "http://lendmeyourear.net/10k/",
+        "skills": "html | css | javascript"
+    }, {
+        "name": "Vita",
+        "slug": "vita",
+        "description": "A one page resume site template. Highly customisable via LESS variables. I've used this to build numerous sites for friends and family.",
+        "url": "http://lendmeyourear.net/bits/vita/",
+        "skills": "html | css | javascript"
+    }]
+}

@@ -1,0 +1,28 @@
+---
+title: Portfolio
+---
+
+<% content_for(:title, 'Portfolio') %>
+<% content_for(:meta_desc, 'Some examples of my work') %>
+
+<main class="page-section">
+    <div class="container">
+        <h1>Portfolio</h1>
+        <p>A curated list of all the things that I have worked on that I am proud of.</p>
+    </div>
+
+    <% data.portfolio.all.each do |portfolio| %>
+        <article class="grid">
+            <div class="grid__col-5">
+                <div class="grid__cell grid__col--bg" style="background-image: url(images/portfolio/<%= portfolio.slug %>.jpg)"></div>
+            </div>
+            <div class="grid__col-7">
+                <div class="grid__cell">
+                    <h2><a href="<%= portfolio.url %>"><%= portfolio.name %></a></h2>
+                    <p><%= portfolio.description %></p>
+                    <p><%= portfolio.skills %></p>
+                </div>
+            </div>
+        </article>
+    <% end %>
+</main>
