@@ -1,17 +1,19 @@
 <nav class="page-section page-section--footer">
     <div class="container container--content">
-        <ol class="list-inline lead">
+        <ul class="list-inline lead margin-reset">
+            <li>Info:</li>
+            <li><%= link_to 'about', '/about.html' %></li>
+            <li><%= link_to 'blog', '/blog.html' %></li>
+            <li><%= link_to 'portfolio', '/portfolio.html' %></li>
+            <li><%= link_to 'github', 'https://github.com/leejordan' %></li>
+            <li><%= link_to '@leenternet', 'https://twitter.com/leenternet' %></li>
+            <li><%= link_to 'email', 'mailto:ldjordan@gmail.com' %></li>
+        </ul>
+        <ul class="list-inline lead">
             <li>Tags:</li>
             <% blog.tags.each do |tag, articles| %>
                 <li><%= link_to "#{tag}", tag_path(tag) %></li>
             <% end %>
-        </ol>
-        <ul class="list-inline lead margin-reset">
-            <li>Info:</li>
-            <li><%= link_to 'about', 'about.html' %></li>
-            <li><%= link_to 'github', 'https://github.com/leejordan' %></li>
-            <li><%= link_to '@leenternet', 'https://twitter.com/leenternet' %></li>
-            <li><%= link_to 'email', 'mailto:ldjordan@gmail.com' %></li>
         </ul>
         <%= partial 'partials/search' %>
     </div>

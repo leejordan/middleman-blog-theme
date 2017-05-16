@@ -5,20 +5,16 @@ title: Tagged posts
 <% content_for(:title, pluralize(page_articles.size, 'post') + " tagged as " + tagname ) %>
 
 <main class="page-section">
-    <div class="grid">
-        <div class="grid__col-xs-12 container--content">
-            <h1><%= pluralize(page_articles.size, 'post') %> tagged as '<%= tagname %>'</h1>
-        </div>
+    <div class="container container--content">
+        <h1><%= pluralize(page_articles.size, 'post') %> tagged as '<%= tagname %>'</h1>
+        <hr>
     </div>
     <% page_articles.each_with_index do |article, index| %>
-        <article class="grid grid--align-center">
-            <div class="grid__col-5">
-                <%= link_to image_tag("images/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
-            </div>
-            <div class="grid__col-7">
-                <h2 class="margin-reset"><%= link_to article.title, article %></h2>
-                <p class="margin-reset"><%= article.date.strftime('%b %e %Y') %></p>
-            </div>
-        </article>
+        <%= partial 'partials/feature', :locals => {
+                :url => '/' + article.slug + '.html',
+                :img => '/images/' + article.slug + '/cover.jpg',
+                :title => article.title,
+                :body => article.date.strftime('%b %e %Y')
+            } %>
     <% end %>
 </main>

@@ -1,25 +1,49 @@
 ---
-title: All posts
+title: Home page
 ---
 
 <%= partial 'partials/intro', :locals => { :offset => true } %>
 
 <section class="page-section">
-    <div class="container container--content">
+    <div class="container">
         <h2>Blog posts</h2>
         <p class="lead">
-            I occasionally write blog posts about web development and other related areas.
+            I occasionally write blog posts about web development and other related areas. Here are the most recent posts. <a href="/blog.html">View all blog posts</a>.
         </p>
     </div>
-    <% page_articles.each_with_index do |article, index| %>
-        <article class="grid grid--align-center">
-            <div class="grid__col-4">
-                <%= link_to image_tag("images/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
-            </div>
-            <div class="grid__col-8">
-                <h2 class="margin-reset"><%= link_to article.title, article %></h2>
-                <p class="margin-reset"><%= article.date.strftime('%b %e %Y') %></p>
-            </div>
-        </article>
+    <% page_articles.first(3).each_with_index do |article, index| %>
+        <%= partial 'partials/feature', :locals => {
+                :url => article.slug + '.html',
+                :img => '/images/' + article.slug + '/cover.jpg',
+                :title => article.title,
+                :body => article.date.strftime('%b %e %Y')
+            } %>
     <% end %>
+    <div class="container">
+        <p class="lead">
+            <a href="/blog.html">View all blog posts</a>
+        </p>
+    </div>
+</main>
+
+<section class="page-section">
+    <div class="container">
+        <h2>Portfolio</h2>
+        <p class="lead">
+            A curated list of all the things that I have worked on that I am proud of. Here are the most recent entries. <a href="/portfolio.html">View all portfolio entries</a>.
+        </p>
+    </div>
+    <% data.portfolio.all.first(3).each do |portfolio| %>
+        <%= partial 'partials/feature', :locals => {
+                :url => portfolio.url,
+                :img => '/images/portfolio/' + portfolio.slug + '.jpg',
+                :title => portfolio.name,
+                :body => portfolio.description
+            } %>
+    <% end %>
+    <div class="container">
+        <p class="lead">
+            <a href="/portfolio.html">View all portfolio entries</a>
+        </p>
+    </div>
 </main>

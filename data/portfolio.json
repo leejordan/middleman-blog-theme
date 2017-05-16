@@ -1,15 +1,53 @@
 {
     "all": [{
+        "name": "Pistachio",
+        "slug": "pistachio",
+        "description": "The front end framework and pattern library for graze.com",
+        "url": "http://pistachio.graze.com/"
+    }, {
+        "name": "Reflex",
+        "slug": "reflex",
+        "description": "An open source lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills",
+        "url": "http://leejordan.github.io/reflex/docs/"
+    }, {
+        "name": "Graze blog",
+        "slug": "graze-blog",
+        "description": "A static blog site built with middleman and contentful",
+        "url": "https://www.graze.com/uk/blog/"
+    }, {
+        "name": "Amazon instant video",
+        "slug": "amazon-instant-video",
+        "description": "Silverlight video player with closed captions for amazon. <a href='/amazon-instant-video.html'>Read more about my involvement</a>.",
+        "url": "https://www.amazon.com/gp/video/detail/B00QROJ94Q/ref=atv_hm_hom_1_c_tmcpop_2_brws1?ie=UTF8&pf_rd_i=home&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=2977329682&pf_rd_r=TRVH3GWPSJNVSRA283FZ&pf_rd_s=center-6&pf_rd_t=12401"
+    }, {
         "name": "10k tube",
         "slug": "10k-tube",
-        "description": "My entry for the 10k apart competition where the challenge was to build a compelling web experience that can be delivered in 10kB and works without JavaScript.",
-        "url": "http://lendmeyourear.net/10k/",
-        "skills": "html | css | javascript"
+        "description": "My entry for the <a href='https://a-k-apart.com/'>10k apart</a> competition where the challenge was to build a compelling web experience that can be delivered in 10kB and works without JavaScript.",
+        "url": "http://lendmeyourear.net/10k/"
     }, {
         "name": "Vita",
         "slug": "vita",
-        "description": "A one page resume site template. Highly customisable via LESS variables. I've used this to build numerous sites for friends and family.",
-        "url": "http://lendmeyourear.net/bits/vita/",
-        "skills": "html | css | javascript"
+        "description": "A one page resume site template. Highly customisable via LESS variables.",
+        "url": "http://lendmeyourear.net/bits/vita/"
+    }, {
+        "name": "Michael Rea: Illustrator",
+        "slug": "michael-rea",
+        "description": "Portfolio site for a professional illustrator",
+        "url": "http://www.michaelreaillustration.com/"
+    }, {
+        "name": "Global physiotherapy",
+        "slug": "global",
+        "description": "Web presence for a physiotherapy service",
+        "url": "http://globalphysiotherapy.net/"
+    }, {
+        "name": "Lovefilm",
+        "slug": "lovefilm",
+        "description": "A DVD rental and video streaming website for a company that no longer exists (they got bought and consumed by amazon)",
+        "url": "http://lovefilm.com"
+    }, {
+        "name": "Lovefilm apps",
+        "slug": "lovefilm-app",
+        "description": "A JavaScript video streaming app framework for iOS and smart TVs. The apps no longer exist unfortunately.",
+        "url": "http://lovefilm.com"
     }]
 }

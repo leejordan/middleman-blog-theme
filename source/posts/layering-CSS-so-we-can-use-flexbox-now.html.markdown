@@ -1,6 +1,6 @@
 ---
 title: Layering CSS so we can use flexbox now
-slug: layering-CSS-so-we-can-use-flexbox-now
+slug: layering-css-so-we-can-use-flexbox-now
 date: 2016-02-02
 tags: css3, responsive, html5, flexbox
 ---

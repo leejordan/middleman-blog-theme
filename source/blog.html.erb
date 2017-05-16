@@ -1,0 +1,31 @@
+---
+title: Portfolio
+---
+
+<% content_for(:title, 'All blog posts') %>
+<% content_for(:meta_desc, 'All blog posts on the subject of web development') %>
+
+<main class="page-section">
+    <div class="container container--content">
+        <h1>Blog</h1>
+        <p>I occasionally write blog posts about web development and other related areas. This page contains every post I've ever written.</p>
+        <hr>
+        <ul class="list-inline lead">
+            <li>Tags:</li>
+            <% blog.tags.each do |tag, articles| %>
+                <li><%= link_to "#{tag}", tag_path(tag) %></li>
+            <% end %>
+        </ul>
+        <hr>
+        <h2>Blog posts</h2>
+    </div>
+
+    <% page_articles.each_with_index do |article, index| %>
+        <%= partial 'partials/feature', :locals => {
+                :url => article.slug + '.html',
+                :img => '/images/' + article.slug + '/cover.jpg',
+                :title => article.title,
+                :body => article.date.strftime('%b %e %Y')
+            } %>
+    <% end %>
+</main>

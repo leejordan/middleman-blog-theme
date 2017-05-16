@@ -9,38 +9,40 @@ I will always advocate for the creation of a style guide and front end framework
 
 Whether you roll your own or use an existing front end framework with a bit of personalisation (a modified version of bootstrap for example) the benefits are huge for designers, developers and users.
 
-## Sensible defaults
+## Sensible defaults and visual consistency
 
-The intention here is that our front end framework should provide a solid baseline on which to iterate. It doesn't contain every possible front end web component you can imagine but provides a platform on which to build.
+Your front end framework should provide a solid baseline on which to iterate. Every common HTML element should have a default style and your documentation should provide opinionated directions on their appropriate use.
 
-## Visual consistency
+## Standardised UI components
 
-Every standard html element has a default style and our style guide provides opinionated directions on their appropriate use.
+Certain components you can identify as being more than a collection of basic HTML elements which will regularly be used across your sites should be standardised. This will ensure that no matter which page or site a user visits, they will see and interact with roughly the same familiar functionality. Examples of this include dropdown menus and pagination.
 
-## Standardised consistent UI components
+## Less duplication of effort
 
-Certain components we've identified as regularly being used across our sites have been standardised to ensure no matter which graze website a user visits, they should see and interact with roughly the same familiar functionality. Examples of this include dropdown menus, pagination, and forms.
+By having a seperate front end framework you can focus your effort on building a component once, and rolling it out across all your pages or sites. I've personally worked for a company that had 3 seperate implementations of a carousel on one website which was probably because nobody knew of the existence of the other carousels and they therefore chose to work on adding a new implementation.
 
-## Make your own choices
-- we can change the look and feel across all our websites at once by releasing a new version of pistachio
+Keeping all your front end code in one place (and documenting it) results in clarity over what components are available and allows focus on getting the implmentation right once.
 
-## clearly see changes
-- As a standalone repo, we can carefully review all changes in isolation instead of having css or javascript changes bundled in with back end changes
+## Clearly see changes
 
-## keep it clean and lean
-- we can concentrate on delivering the highest levels of performance and accessiblity on our front end by focusing our efforts in one place
+As a standalone codebase, you can carefully review all changes in isolation instead of having css or javascript changes bundled in with back end changes. When your front end code is isolated, you can more easily track changes to classes and components and identify any problems that may arise from these changes.
+
+## Keep it clean and lean
+
+As discussed before, you can concentrate on delivering the highest levels of performance and accessiblity on your front end by focusing your efforts in one place.
 
 When your front end code is tied up in a monolithic codebase and is often worked on alongside back end development work it becomes hard to keep track of what is changing and as a consequence CSS and JavaScript files can quickly become bloated. I've worked with many codebases and companies where this problem occurs.
 
-Perhaps the best way to illustrate this improvement is by comparing CSS specificity graphs.
+Perhaps the best way to illustrate this improvement is by comparing CSS specificity graphs of a large codebase I created a front end framework for.
 
-With CSS specificity graphs like this, spikes are bad news, and the general trend should be towards higher specificity later in the stylesheet. These graphs reflect the before and after of a large site before and after the introduction of a 
+With CSS specificity graphs like this, spikes are bad news, and the general trend should be towards higher specificity later in the stylesheet. These graphs reflect the before and after of a large site before and after the introduction of a front end framework:
 
-Before Pistachio:
-![](/content/images/2016/02/grazestrap-specificity.png)
+Before front end framework:
+![](/images/the-benefits-of-style-guides-and-front-end-frameworks/grazestrap-specificity.jpg)
 
-After Pistachio:
-![](/content/images/2016/02/pistachio-specificity.png)
+After front end framework:
+![](/images/the-benefits-of-style-guides-and-front-end-frameworks/pistachio-specificity.jpg)
 
 ## Increase collaboration & buy in
-- we have an established style guide with which to educate new members of the team and any third parties that we work with
+
+When you have an established front end framework and style guide you are better able to educate new members of the team and any third parties that you may work with on appropriate use of your frond end components
