@@ -19,7 +19,7 @@ gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 gem "builder", "~> 3.0"
 
 # Less support
-gem 'therubyracer'
+gem 'therubyracer', "0.12.3"
 gem 'less'
 
 # Nokogiri used nominally for article summaries
