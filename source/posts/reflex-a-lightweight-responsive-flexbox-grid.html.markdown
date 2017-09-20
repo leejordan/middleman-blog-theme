@@ -2,7 +2,7 @@
 title: Reflex - a lightweight responsive flexbox grid
 slug: reflex-a-lightweight-responsive-flexbox-grid
 date: 2015-04-24
-tags: accessibility, css3, design, flexbox, html5, responsive
+tags: css3, design, flexbox, html5, responsive
 ---
 
 It's a common problem in responsive web development that making elements the same height at all viewport sizes is quite fiddly to do, especially when your elements are dynamically generated.
