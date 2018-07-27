@@ -1,21 +1,21 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title><%= yield_content(:title)? yield_content(:title) : current_page.data.title %> | Lee Jordan web developer</title>
+<title><%= yield_content(:title)? yield_content(:title) : current_page.data.title %> | Lee Jordan</title>
 
 <% ### general meta ### %>
-<meta name="description" itemprop="description" content="<%= yield_content(:meta_desc)? yield_content(:meta_desc).sub(/^(\w)/) {|s| s.capitalize} : 'The blog and portfolio site of Lee Jordan, web developer' %>" />
-<meta name="keywords" itemprop="keywords" content="<%= yield_content(:meta_keywords)? yield_content(:meta_keywords) : 'web, development, css, jquery, php, lee, jordan, london, web development, web developer, html5, css3, responsive web design, responsive, flexbox' %>" />
+<meta name="description" itemprop="description" content="<%= yield_content(:meta_desc)? yield_content(:meta_desc).sub(/^(\w)/) {|s| s.capitalize} : 'The blog and portfolio site of Lee Jordan, UX specialist and web developer' %>" />
+<meta name="keywords" itemprop="keywords" content="<%= yield_content(:meta_keywords)? yield_content(:meta_keywords) : 'web, development, css, jquery, php, lee, jordan, london, web development, web developer, html5, css3, responsive web design, responsive, flexbox, ux, ux design, product design' %>" />
 <link rel="canonical" href="http://www.lendmeyourear.net/<%= current_page.path %>" />
 <link rel="alternate" type="application/rss+xml" title="Lee Jordan's blog feed" href="http://www.lendmeyourear.net/feed.xml" />
 
 
 <% ### facebook meta ### %>
 <meta property="og:title" content="<%= yield_content(:title)? yield_content(:title) : current_page.data.title %>"/>
-<meta property="og:description" content="<%= yield_content(:meta_desc)? yield_content(:meta_desc) : 'The blog and portfolio site of Lee Jordan, web developer' %>"/>
+<meta property="og:description" content="<%= yield_content(:meta_desc)? yield_content(:meta_desc) : 'The blog and portfolio site of Lee Jordan, UX specialist and web developer' %>"/>
 <meta property="og:type" content="<%= yield_content(:meta_og_type)? yield_content(:meta_og_type) : 'article' %>"/>
 <meta property="og:url" content="http://www.lendmeyourear.net/<%= current_page.path %>"/>
-<meta property="og:site_name" content="Lee Jordan's web development blog"/>
+<meta property="og:site_name" content="Lee Jordan"/>
 <% if yield_content(:meta_img) %>
     <meta property="og:image" content="<%= yield_content(:meta_img) %>"/>
 <% end %>
@@ -25,7 +25,7 @@
 <meta name="twitter:card" value="summary" />
 <meta name="twitter:url" value="http://www.lendmeyourear.net/<%= current_page.path %>" />
 <meta name="twitter:title" value="<%= yield_content(:title)? yield_content(:title) : current_page.data.title %>" />
-<meta name="twitter:description" value="<%= yield_content(:meta_desc)? yield_content(:meta_desc) : 'The blog and portfolio site of Lee Jordan, web developer' %>" />
+<meta name="twitter:description" value="<%= yield_content(:meta_desc)? yield_content(:meta_desc) : 'The blog and portfolio site of Lee Jordan, UX specialist and web developer' %>" />
 <% if yield_content(:meta_img) %>
     <meta name="twitter:image" value="<%= yield_content(:meta_img) %>" />
 <% end %>

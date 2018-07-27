@@ -8,10 +8,10 @@ title: Home page
     <div class="container">
         <h2>Blog posts</h2>
         <p class="lead">
-            I occasionally write blog posts about web development and other related areas. Here are the most recent posts. <a href="/blog.html">View all blog posts</a>.
+            A collection of blog posts and case studies about UX and web development. Here are the most recent posts. <a href="/blog.html">View all blog posts</a>.
         </p>
     </div>
-    <% page_articles.first(3).each_with_index do |article, index| %>
+    <% page_articles.first(5).each_with_index do |article, index| %>
         <%= partial 'partials/feature', :locals => {
                 :url => article.slug + '.html',
                 :img => '/images/' + article.slug + '/cover.jpg',
@@ -30,10 +30,10 @@ title: Home page
     <div class="container">
         <h2>Portfolio</h2>
         <p class="lead">
-            A curated list of all the things that I have worked on that I am proud of. Here are the most recent entries. <a href="/portfolio.html">View all portfolio entries</a>.
+            A curated list of some of the products I have been involved with. Here are the most recent entries. <a href="/portfolio.html">View all portfolio entries</a>.
         </p>
     </div>
-    <% data.portfolio.all.first(3).each do |portfolio| %>
+    <% data.portfolio.all.first(5).each do |portfolio| %>
         <%= partial 'partials/feature', :locals => {
                 :url => portfolio.url,
                 :img => '/images/portfolio/' + portfolio.slug + '.jpg',

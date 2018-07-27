@@ -1,14 +1,29 @@
 {
     "all": [{
+        "name": "Instasupply",
+        "slug": "instasupply",
+        "description": "The front end framework and pattern library for instasupply.com",
+        "url": "https://styleguide.instasupply.com/"
+    },{
+        "name": "Ephemeral typing interface",
+        "slug": "ephemeral",
+        "description": "A tech demo of a typing interface I've been obsessed with in my spare time.",
+        "url": "http://lendmeyourear.net/ephemeral"
+    }, {
+        "name": "Reflex grid",
+        "slug": "reflex",
+        "description": "An open source lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills",
+        "url": "http://leejordan.github.io/reflex/docs/"
+    }, {
+        "name": "graze.com",
+        "slug": "graze-com",
+        "description": "A combination of a traditional e-commerce storefront and a subscription service.",
+        "url": "https://graze.com/"
+    }, {
         "name": "Pistachio",
         "slug": "pistachio",
         "description": "The front end framework and pattern library for graze.com",
         "url": "http://pistachio.graze.com/"
-    }, {
-        "name": "Reflex",
-        "slug": "reflex",
-        "description": "An open source lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills",
-        "url": "http://leejordan.github.io/reflex/docs/"
     }, {
         "name": "Graze blog",
         "slug": "graze-blog",
@@ -25,7 +40,7 @@
         "description": "My entry for the <a href='https://a-k-apart.com/'>10k apart</a> competition where the challenge was to build a compelling web experience that can be delivered in 10kB and works without JavaScript.",
         "url": "http://lendmeyourear.net/10k/"
     }, {
-        "name": "Vita",
+        "name": "Vita template",
         "slug": "vita",
         "description": "A one page resume site template. Highly customisable via LESS variables.",
         "url": "http://lendmeyourear.net/bits/vita/"
@@ -34,11 +49,6 @@
         "slug": "michael-rea",
         "description": "Portfolio site for a professional illustrator",
         "url": "http://www.michaelreaillustration.com/"
-    }, {
-        "name": "Global physiotherapy",
-        "slug": "global",
-        "description": "Web presence for a physiotherapy service",
-        "url": "http://globalphysiotherapy.net/"
     }, {
         "name": "Lovefilm",
         "slug": "lovefilm",
