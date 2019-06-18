@@ -77,6 +77,7 @@ activate :blog do |blog|
   blog.tag_template = "tag.html"
   blog.taglink = "tag/{tag}.html"
   blog.permalink = "{slug}.html"
+  blog.summary_separator = "#"
   blog.summary_length = 150
 
   # Enable pagination
