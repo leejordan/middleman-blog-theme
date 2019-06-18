@@ -30,7 +30,7 @@ By way of example, I wrote [this post in markdown][3] and [converted it to remar
 You can change slides with your arrow keys, space bar or mouse wheel (or swipe on your tablet/phone). Press `p` to see presenter mode and `c` to see the cloned presentation for your viewers.
 
 <div class="embed-responsive embed-responsive-16by9" style="border: 1px solid #ccc;">
-  <iframe name="presentation example" src="http://www.lendmeyourear.net/media/markdown-remark-slides.html#1"></iframe>
+  <iframe name="presentation example" src="//www.lendmeyourear.net/media/markdown-remark-slides.html#1"></iframe>
 </div>
 
 Here's a further [example of the same presentation in a branded theme][5] with custom fonts and the company logo on every page.
@@ -161,7 +161,7 @@ You need to cache the JavaScript in your browser by viewing your presentation wi
 To make it fully offline without depending on browser caching you can [grab the minified js][8], store it in the same directory as your remark.js presentation and edit your presentation html document to replace
 
 ```html
-<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+<script src="//remarkjs.com/downloads/remark-latest.min.js"></script>
 ```
 
 With a reference to the local file
@@ -230,7 +230,7 @@ This way of creating presentations has turned something that used to be a chore 
  [5]: http://www.lendmeyourear.net/media/markdown-remark-slides-graze.html
  [6]: http://www.lendmeyourear.net/media/remark-template-basic.css
  [7]: https://github.com/gnab/remark/wiki/Markdown
- [8]: https://gnab.github.io/remark/downloads/remark-latest.min.js
+ [8]: https://remarkjs.com/downloads/remark-latest.min.js
  [9]: http://www.lendmeyourear.net/media/remark-template-graze.css
  [10]: http://www.fontsquirrel.com/tools/webfont-generator
  [11]: http://www.base64-image.de/

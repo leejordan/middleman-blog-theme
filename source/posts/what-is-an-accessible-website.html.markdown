@@ -5,7 +5,7 @@ date: 2016-03-05
 tags: accessibility, design, html5, javascript, ux
 ---
 
-Often when we try to define what an accessible website is, we default to the position that it's a website that can be used by a visually impaired person via a screen reader. If your website makes sense and can be navigated when it's read out by a screen reader then you have an "accessible website", you've ticked a box and your work here is done. Well done, let's all go to the bar.
+Often when we try to define what an accessible website is, we default to the position that it means a website that can be used by a visually impaired person via a screen reader. If your website makes sense and can be navigated when it's read out by a screen reader then you have an "accessible website", you've ticked a box and your work here is done. Well done, let's all go to the bar.
 
 In reality, this definition is far too narrow and doesn't come close to imparting an understanding of the other accessibility issues that can arise. It's also a definition that makes accessibility as a whole easy to dismiss. Some might roll their eyes and complain a lot of extra work for a very small percentage of users. Others might declare "we don't have any blind users" as a reason for not making a website accessible. "We're not marketing ourselves to the visually impaired demographic" somebody might say before dropping their microphone and leaving the room to sustained applause. One brave soul might make the claim they they "don't have time to test in other browsers or devices". It's important to note here that these are not straw man arguments but are in fact real things that I have heard actual, living, breathing, human beings say.
 
