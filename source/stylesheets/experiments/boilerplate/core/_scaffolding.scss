@@ -1,0 +1,32 @@
+// Scaffolding
+//
+// Explicit baseline styles for core structural elements
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: $colour-null;
+
+    @media only screen and (max-width: ($breakpoint-laptop - 1)) {
+        font-size: $font-size-small;
+    }
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    font-family: $font-family-base;
+    font-size: 100%;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $colour-text;
+    text-align: left;
+    background-color: $colour-body;
+    -webkit-overflow-scrolling: touch;
+}

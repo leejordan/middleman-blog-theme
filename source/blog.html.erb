@@ -1,5 +1,5 @@
 ---
-title: Portfolio
+title: Blog
 ---
 
 <% content_for(:title, 'All blog posts') %>
@@ -7,7 +7,7 @@ title: Portfolio
 
 <main class="page-section">
     <div class="container container--content">
-        <h1>Blog</h1>
+        <h1>My blog</h1>
         <p>A collection of blog posts and case studies about UX and web development.</p>
         <hr>
         <ul class="list-inline lead">
@@ -22,8 +22,8 @@ title: Portfolio
 
     <% page_articles.each_with_index do |article, index| %>
         <%= partial 'partials/feature', :locals => {
-                :url => article.slug + '.html',
-                :img => '/images/' + article.slug + '/cover.jpg',
+                :url => '/' + article.slug,
+                :img => '/images/posts/' + article.slug + '/cover.jpg',
                 :title => article.title,
                 :body => article.date.strftime('%b %e %Y')
             } %>

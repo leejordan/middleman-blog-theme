@@ -38,10 +38,10 @@ Perhaps the best way to illustrate this improvement is by comparing CSS specific
 With CSS specificity graphs like this, spikes are bad news, and the general trend should be towards higher specificity later in the stylesheet. These graphs reflect the before and after of a large site before and after the introduction of a front end framework:
 
 Before front end framework:
-![](/images/the-benefits-of-style-guides-and-front-end-frameworks/grazestrap-specificity.jpg)
+![](/images/posts/the-benefits-of-style-guides-and-front-end-frameworks/grazestrap-specificity.jpg)
 
 After front end framework:
-![](/images/the-benefits-of-style-guides-and-front-end-frameworks/pistachio-specificity.jpg)
+![](/images/posts/the-benefits-of-style-guides-and-front-end-frameworks/pistachio-specificity.jpg)
 
 ## Increase collaboration & buy in
 

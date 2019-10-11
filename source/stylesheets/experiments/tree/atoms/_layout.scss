@@ -1,0 +1,47 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	max-width: 800px;
+	min-width: 320px;
+	width: 80vw;
+	margin: 0 auto;
+	padding: 10vw 0;
+}
+
+.trunk {
+	padding-bottom: 15vw;
+	background: url('/experiments/tree/images/svg/tree-trunk.svg');
+	background-repeat: repeat-y;
+	background-size: contain;
+	background-position: center;
+
+	h1 {
+		margin-top: -10vw !important;
+		padding-right: 60%;
+		text-align: right;
+	}
+
+	p {
+		padding-right: 60%;
+		text-align: right;
+
+		&:nth-child(odd) {
+			padding-right: 0;
+			padding-left: 60%;
+			text-align: left;
+		}
+	}
+
+	strong {
+		@include font-size(1.2);
+		font-family: $font-family-heading;
+		font-weight: $font-weight-base;
+		line-height: $line-height-heading;
+	}
+}
+
+.author {
+	margin-top: 100px;
+	text-align: center;
+}

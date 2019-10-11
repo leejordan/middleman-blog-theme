@@ -30,7 +30,7 @@ We performed a full audit of every page across our sites and discovered some sta
 * We had 7 separate button styles
 * Single pages had as many as 10 different typographic styles
 
-![](/images/case-study-user-centered-design/pistachio-styles-audit.jpg)
+![](/images/posts/posts/case-study-user-centered-design/pistachio-styles-audit.jpg)
 
 We worked with the customer support team and analysed their entire history of support requests to identify particularly problematic user journeys.
 
@@ -47,7 +47,7 @@ At the same time, we worked with the development and digital product team to agr
 
 All of this preliminary work formed the basis for what eventually became [pistachio](http://pistachio.graze.com/) - the graze.com styleguide and front end framework. We began with basic web elements such as buttons, forms, typography, the colour palette, and some basic UI components. Over the course of time more UI components were added but only where there was agreement that they were appropriate.
 
-![](/images/case-study-user-centered-design/pistachio.jpg)
+![](/images/posts/case-study-user-centered-design/pistachio.jpg)
 
 This front end framework was built and hosted entirely separate from the rest of the codebase to ensure we could enforce a consistent look and feel across our existing sites, and the newer e-commerce site which was being built. Because user testing and discussions were still going on, the front end framework went through many iterations but we were able to roll these changes out across all our sites at the same time due to treating it as a separate codebase.
 
@@ -59,23 +59,23 @@ Now we began the work to understand and improve some of our more problematic use
 
 As part of our audit work we had a pretty good idea of the main areas of pain for our users and we prioritised these alongside the other consideration of choosing work that was valuable to the company in terms of revenue. We also had to work out how to combine a subscription service and a traditional e-commerce service into one coherent experience.
 
-![](/images/case-study-user-centered-design/card-sort.jpg)
+![](/images/posts/case-study-user-centered-design/card-sort.jpg)
 
 We also sought to clear up some "dead-ends" on the site by offering more onward journeys. This was a focus for us because we knew from the data audit that customers who were more engaged in using the site and in reading about our products were less likely to churn or bounce.
 
 We developed user personas and mapped out their interactions with graze (which included events outside website interaction, such as purchasing a graze snack in a retail store or receiving an email). We used this as a starting point for discussions with key stakeholders.
 
-![](/images/case-study-user-centered-design/journey-map.jpg)
+![](/images/posts/case-study-user-centered-design/journey-map.jpg)
 
 We began scheduling regular user testing sessions. We reached out to existing graze customers as well as non customers and spoke to passers by on the street outside the office. We would test everything from wireframes, sketch mockups, and screenshots. When user testing sessions were taking place in the office, we invited people from around the business to watch and listen to increase visibility of the work we were doing, and to expose some of the feedback we were getting from our subjects.
 
-![](/images/case-study-user-centered-design/early-prototype.jpg)
+![](/images/posts/case-study-user-centered-design/early-prototype.jpg)
 
 Further down the process we built a prototype graze website where we could put a curated but "real" web experience in front of our test subjects. This was further demonstration of the value of the front end framework we had already built as we were able to mock up pages incredibly fast.
 
 We learnt as much and as quickly as we could and continually refined our prototypes. Alongside this work we were running some multivariate tests on the live websites to further guide the general direction we were taking. We were seeking confirmation that our proposed user journeys were understandable, and that our interactions were clear.
 
-![](/images/case-study-user-centered-design/design-review.jpg)
+![](/images/posts/case-study-user-centered-design/design-review.jpg)
 
 We hosted weekly design reviews and presented our designs and proposals publicly to key stakeholders but also opened the invitation to anybody in the business who wished to attend.
 

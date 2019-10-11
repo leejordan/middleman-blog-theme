@@ -1,0 +1,26 @@
+---
+title: Experiments
+---
+
+<% content_for(:title, 'All art experiments') %>
+<% content_for(:meta_desc, 'Experiments with CSS, layout, and web design in general') %>
+
+<main class="page-section">
+    <div class="container container--content">
+        <h1>Art experiments</h1>
+        <p>
+            Occasionally I write a story then make a web page to present it. Sometimes I just have an idea for a web design and the content comes later.
+        </p>
+        <p>
+            According to <a href="https://www.lexico.com/en/definition/art">the dictionary</a>, art is <em>The expression or application of human creative skill and imagination</em>, so this is definitely art.
+        </p>
+    </div>
+    <% data.experiments.all.each do |experiment| %>
+        <%= partial 'partials/feature', :locals => {
+                :url => '/experiments/' + experiment.slug,
+                :img => '/images/experiments/' + experiment.slug + '/cover.jpg',
+                :title => experiment.name,
+                :body => experiment.description
+            } %>
+    <% end %>
+</main>

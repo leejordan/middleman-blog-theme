@@ -13,7 +13,7 @@
         <main class="page-section">
             <div class="container container--post">
                 <h1><%= current_article.title  %></h1>
-                <%= image_tag("/images/" + current_article.data.slug + "/cover.jpg", class: "img-bleed post-cover", alt: current_article.title) %>
+                <%= image_tag("/images/posts/" + current_article.data.slug + "/cover.jpg", class: "img-bleed post-cover", alt: current_article.title) %>
                 <%= yield %>
             </div>
         </main>

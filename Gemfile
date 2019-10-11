@@ -9,21 +9,21 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 # Middleman Gems
-gem "middleman", "~> 4.1"
+gem 'middleman', '~> 4.1'
 gem "middleman-blog"
 gem "middleman-search"
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
 # For feed.xml.builder
-gem "builder", "~> 3.0"
+gem 'builder', '~> 3.0'
 
 # Less support
-gem 'therubyracer', "0.12.3"
+gem 'therubyracer', '0.12.3'
 gem 'less'
 
 # Nokogiri used nominally for article summaries
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.10.4'
 
 # Code syntax support
-gem "middleman-syntax"
+gem 'middleman-syntax'

@@ -6,7 +6,9 @@
 
     <body class="<%= page_classes %>">
         <%= partial 'partials/title' %>
-        <%= yield %>
+        <main>
+        	<%= yield %>
+        </main>
         <%= partial 'partials/footer' %>
     </body>
 </html>

@@ -9,9 +9,9 @@ This is a small php/css/html component that parses the building status informati
 
 ## Example output
 
-Here's an example that uses match id `656825006`
+Here's an example that uses match id `5064461346`
 
-<div class="embed-responsive embed-responsive-square"><iframe name="minimap_example" src="http://lendmeyourear.net/bits/dota2/minimap/minimap.php?match_id=656825006"></iframe><em>please wait, generating example minimap...</em></div>
+<div class="embed-responsive embed-responsive-square"><iframe name="minimap_example" src="http://lendmeyourear.net/bits/dota2/minimap/minimap.php?match_id=5064461346"></iframe><em>please wait, generating example minimap...</em></div>
 
 ## Where to get it
 
@@ -21,7 +21,7 @@ The best way to grab the latest version of this is [on github][2]. Let me know i
 
 There are two ways to use it.
 
-1.  load minimap.php with a valid `match_id` argument e.g. `minimap.php?match_id=656600486`. The best resource for finding a `match_id` is either the [dota2 match api][3] or [dotabuff][4]
+1.  load minimap.php with a valid `match_id` argument e.g. `minimap.php?match_id=5064461346`. The best resource for finding a `match_id` is either the [dota2 match api][3] or [dotabuff][4]
 2.  use the simple form on index.php and provide a valid match_id It should be easy enough to integrate it into a dota2 site that already handles parsing match details from the dota2 api. The elegant part is that the html is responsive and the minimap will look nice in any size viewport.
 
 [1]: http://dota2.com

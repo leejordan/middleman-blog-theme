@@ -1,0 +1,105 @@
+// Typography
+
+// Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 .25em;
+    font-family: $font-family-heading;
+    font-weight: $font-weight-base;
+    line-height: $line-height-heading;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    a {
+        text-decoration: none;
+
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include svg-inline($colour-text-muted, 1.25em, 1.25em);
+}
+
+h1 {
+    @include font-size(1.8);
+    font-weight: $font-weight-strong;
+}
+
+h2 {
+    @include font-size(1.5);
+    font-weight: $font-weight-strong;
+}
+
+h3 {
+    @include font-size(1.3);
+}
+
+h4 {
+    @include font-size(1.2);
+}
+
+h5 {
+    @include font-size(1.1);
+}
+
+h6 {
+    @include font-size(1);
+}
+
+
+// Paragraph
+
+p {
+    margin: 0 0 1.25em;
+    @include svg-inline($colour-text-muted, 1em, 1em);
+}
+
+
+// Small
+
+small {
+    font-size: .85em;
+}
+
+
+// Strong
+
+b,
+strong {
+    font-weight: $font-weight-strong;
+}
+
+
+// Emphasis
+
+em {
+    font-style: italic;
+}
+
+
+// Blockquote
+
+blockquote {
+    position: relative;
+    margin: 0 0 .75em;
+    padding-left: .75em;
+    color: $colour-text-muted;
+    font-weight: $font-weight-light;
+    border-left: $border-default;
+
+    cite,
+    footer {
+        color: $colour-text;
+        font-weight: $font-weight-base;
+    }
+}

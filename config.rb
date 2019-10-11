@@ -1,8 +1,10 @@
-###
+  ###
 # Settings
 ###
 set :relative_links, true
+set :trailing_slash, false
 activate :relative_assets
+activate :directory_indexes
 
 ###
 # Page options, layouts, aliases and proxies

@@ -1,0 +1,30 @@
+@mixin font-size($size: 1) {
+    font-size: ($font-size-base * $size);
+    font-size: #{$size}rem;
+}
+
+@mixin svg-inline(
+        $colour: $colour-text,
+        $width: 1em,
+        $height: 1em
+    ) {
+
+    svg {
+        width: $width;
+        height: $height;
+        vertical-align: middle;
+
+        path:not(.no-fill) {
+            transition: fill $anim-time-base ease-out;
+            fill: $colour;
+        }
+
+        circle,
+        path {
+            &.stroke {
+                fill: transparent;
+                stroke: $colour;
+            }
+        }
+    }
+}
