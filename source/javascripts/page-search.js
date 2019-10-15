@@ -1,7 +1,7 @@
 // search page
 
 $(document).ready(function() {
-    $.getJSON("search/search.json", function(data) {
+    $.getJSON("search.json", function(data) {
         var searchIndex = getIndex(data);
         var contents = getDocsList(data);
         displayResults(searchIndex, contents);
@@ -55,8 +55,8 @@ function displayResults(searchIndex, contents) {
             resultSampleClone.removeAttr('data-results-sample');
             resultSampleTitle.text(contents[resultId]['title']);
             resultSampleDate.text(contents[resultId]['date']);
-            resultSampleLink.attr('href', contents[resultId]['slug'].toLowerCase() + '.html');
-            resultSampleImg.attr('src', 'images/' + contents[resultId]['slug'] + '/cover.jpg');
+            resultSampleLink.attr('href', '/posts/' + contents[resultId]['slug'].toLowerCase());
+            resultSampleImg.css('background-image', 'url(/images/posts/' + contents[resultId]['slug'].toLowerCase() + '/cover.jpg)');
             resultsElem.append(resultSampleClone);
             loader.addClass('hidden');
             resultSampleClone.removeClass('hidden');

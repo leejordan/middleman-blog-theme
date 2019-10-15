@@ -30,7 +30,7 @@ title: Search results
     <% page_articles.sample(3).each_with_index do |article, index| %>
         <article class="grid grid--align-center">
             <div class="grid__col-4">
-                <%= link_to image_tag("images/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
+                <%= link_to image_tag("images/posts/" + article.data.slug + "/cover.jpg", class: "grid__cell-img link-img"), article %>
             </div>
             <div class="grid__col-8">
                 <h2 class="margin-reset"><%= link_to article.title, article %></h2>
@@ -41,13 +41,13 @@ title: Search results
 </section>
 
 <section class="page-section hidden" data-results>
-    <article class="grid grid--align-center" data-results-sample>
-        <div class="grid__col-4">
-            <a href="" data-results-sample-link><img src="" class="grid__cell-img link-img" data-results-sample-img></a>
+    <article class="grid" data-results-sample>
+        <div class="grid__col-5">
+            <a href="" class="grid__cell grid__col--bg" data-results-sample-link data-results-sample-img></a>
         </div>
-        <div class="grid__col-8">
+        <div class="grid__col-7 grid--justify-center text-left container--content">
             <h2 class="margin-reset"><a href="" data-results-sample-link data-results-sample-title></a></h2>
-            <p class="margin-reset" data-results-sample-date></p>
+            <p data-results-sample-date></p>
         </div>
     </article>
 </section>

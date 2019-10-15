@@ -22,7 +22,7 @@ title: Blog
 
     <% page_articles.each_with_index do |article, index| %>
         <%= partial 'partials/feature', :locals => {
-                :url => '/' + article.slug,
+                :url => '/posts/' + article.slug,
                 :img => '/images/posts/' + article.slug + '/cover.jpg',
                 :title => article.title,
                 :body => article.date.strftime('%b %e %Y')
