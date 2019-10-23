@@ -1,0 +1,60 @@
+---
+layout: false
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>The Grind</title>
+    <%= stylesheet_link_tag "/stylesheets/experiments/work/styles" %>
+  </head>
+
+  <body>
+    <div class="grind">
+      <div style="background-image: url(/images/experiments/work/1.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/2.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/3.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/4.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/5.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/6.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/7.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/8.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/9.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/10.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/11.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/12.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/13.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/14.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/15.jpg);"></div>
+      <div style="background-image: url(/images/experiments/work/16.jpg);"></div>
+    </div>
+
+    <h1 class="grind-title">
+      WORK
+    </h1>
+
+    <a class="grind-author" href="/experiments">by Lee Jordan</a>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <%= javascript_include_tag '/javascripts/experiments/work/slick.min.js' %>
+    <script>
+      $(document).ready(function(){
+        $('.grind').slick({
+          cssEase: 'ease-in-out',
+          accessibility: false,
+          autoplay: true,
+          prevArrow: false,
+          nextArrow: false,
+          autoplaySpeed: 1000,
+          pauseOnHover: false,
+          pauseOnFocus: false,
+          draggable: false
+        });
+      });
+    </script>
+  </body>
+</html>
+

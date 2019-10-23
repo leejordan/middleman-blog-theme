@@ -1,5 +1,10 @@
 {
     "all": [{
+        "name": "Kopernio",
+        "slug": "kopernio",
+        "description": "The scientific research browser plugin, Kopernio",
+        "url": "https://kopernio.com/"
+    },{
         "name": "Instasupply",
         "slug": "instasupply",
         "description": "The front end framework and pattern library for instasupply.com",

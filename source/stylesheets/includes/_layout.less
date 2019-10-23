@@ -23,7 +23,8 @@
 }
 
 .title-logo {
-    display: block;
+    display: flex;
+    justify-content: center;
     float: left;
     margin-right: .5em;
     height: @title-logo-height;
@@ -31,13 +32,20 @@
     overflow: hidden;
     border: (@container-border / 2) solid @colour-brand;
     border-radius: 50%;
-    background-color: @text-colour;
+    background-color: @colour-brand-light;
     z-index: @z-index-top;
-    transition: border 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition: background-color 0.3s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+    svg {
+        width: 60%;
+    }
 
     &:hover,
     &:focus {
-        border: (@container-border / 3) solid @colour-brand;
+        color: @colour-white;
+        border: 0px solid @colour-brand;
+        background-color: @colour-brand;
+        box-shadow: none;
     }
 
     @media (min-width: @reflex-md) {

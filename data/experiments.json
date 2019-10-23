@@ -2,6 +2,10 @@
     "all": [{
         "name": "Tree",
         "slug": "tree",
-        "description": "About trees, and how we used to climb them."
+        "description": "A short story about trees, and how we used to climb them."
+    },{
+        "name": "Work",
+        "slug": "work",
+        "description": "An experiment with the mix-blend-mode CSS property, responsive text, and responsive images"
     }]
 }

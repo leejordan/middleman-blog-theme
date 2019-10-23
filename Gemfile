@@ -13,6 +13,7 @@ gem 'middleman', '~> 4.1'
 gem "middleman-blog"
 gem "middleman-search"
 
+# Markdown
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 
 # For feed.xml.builder
