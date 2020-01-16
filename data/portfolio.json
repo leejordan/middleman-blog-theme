@@ -32,8 +32,8 @@
     }, {
         "name": "Graze blog",
         "slug": "graze-blog",
-        "description": "A static blog site built with middleman and contentful",
-        "url": "https://www.graze.com/uk/blog/"
+        "description": "A static blog site built with middleman and contentful. Please note this site has been removed by the owner. so I'm linking to an archived version.",
+        "url": "http://web.archive.org/web/20180604223458/https://www.graze.com/uk/blog/"
     }, {
         "name": "Amazon instant video",
         "slug": "amazon-instant-video",

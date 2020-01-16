@@ -4,8 +4,12 @@
         "slug": "tree",
         "description": "A short story about trees, and how we used to climb them."
     },{
+        "name": "Flow",
+        "slug": "flow",
+        "description": "Ascii waves, and a boat to ride upon them."
+    },{
         "name": "Work",
         "slug": "work",
-        "description": "An experiment with the mix-blend-mode CSS property, responsive text, and responsive images"
+        "description": "An experiment with the mix-blend-mode CSS property, responsive text, and responsive images."
     }]
 }

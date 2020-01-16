@@ -1,0 +1,83 @@
+.flow {
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.flow__wave {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 1vw;
+  font-size: 1.2vw;
+  font-family: monospace;
+  line-height: 1;
+  writing-mode: vertical-lr;
+
+  span {
+    background: -webkit-linear-gradient(white, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+#boat {
+  position: absolute;
+  top: -8vw;
+  width: 10vw;
+  height: 10vw;
+  background: url('/images/experiments/flow/boat.svg');
+  background-size: 10vw;
+  background-position: center;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: -4vw;
+    bottom: 0vw;
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    background: url('/images/experiments/flow/bubbles.svg');
+    background-size: 5vw;
+    background-position: center;
+    transform-origin: center right;
+    animation: .2s ease-in-out 0s infinite running spray;
+  }
+}
+
+@keyframes spray {
+  from {
+    transform:  scale(0);
+  }
+
+  to {
+    transform:  scale(1);
+  }
+}
+
+#sun {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  background-color: yellow;
+  color: black;
+}
+
+.author {
+  font-family: sans-serif;
+  color: black;
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+}

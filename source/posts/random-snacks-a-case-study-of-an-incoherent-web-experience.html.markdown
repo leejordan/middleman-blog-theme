@@ -30,7 +30,7 @@ We performed a full audit of every page across our sites and discovered some sta
 * We had 7 separate button styles
 * Single pages had as many as 10 different typographic styles
 
-![](/images/posts/posts/case-study-user-centered-design/pistachio-styles-audit.jpg)
+![](/images/posts/case-study-user-centered-design/pistachio-styles-audit.jpg)
 
 We worked with the customer support team and analysed their entire history of support requests to identify particularly problematic user journeys.
 

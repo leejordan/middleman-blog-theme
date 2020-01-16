@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS Guidelines</title>
+		<style>
+			body {
+    font-family: lato, sans-serif;
+    line-height: 1.5;
+}
+
+body:fullscreen {
+    background-color: #fff;
+}
+
+.remark-slide-scaler {
+    box-shadow: none;
+}
+
+.remark-slide-container {
+    background-color: #fff;
+}
+
+h1, h2, h3 {
+
+}
+
+/** ace editor / code slides **/
+
+.editor {
+    width: 40rem;
+    height: 14.5rem;
+}
+
+.cmdLineContainer {
+    width: 40rem;
+}
+
+.cmdLine {
+    width: 40rem;
+}
+
+pre {
+    color: #000;
+    background-color: #fff;
+    padding: .5em;
+    border: 3px solid #3D8C61;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.outputlog > pre {
+    font-family: monospace;
+    background-color: #fff;
+    width: 40rem;
+    height: 9rem;
+    text-align: left;
+    padding: 0.5em;
+    border-radius: .25em;
+    box-shadow: 0.1em 0.1em 0.5em rgba(0, 0, 0, 0.45);
+    line-height: 0;
+    counter-reset: line;
+    overflow-y: scroll;
+    color: white;
+    background-color: black;
+    padding: .5em;
+}
+.outputlog > pre > span {
+    display: block;
+    line-height: 1rem;
+    font-size: 1rem;
+}
+.outputlog > pre > span:before {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    padding: 0 .5em;
+    margin-right: .5em;
+    color: #888;
+}
+
+.editorbutton{
+    margin: 0 1rem;
+}
+
+
+/** image styles **/
+
+.cover {
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.remark-code, .remark-inline-code {
+    font-family: monospace;
+    text-align: left;
+}
+
+.remark-inline-code {
+    color: white;
+    background-color: black;
+    padding: 0 .5em;
+}
+
+.leftalign {
+    text-align: left;
+}
+
+/* Two-column layout */
+.left-column {
+    width: 30%;
+    float: left;
+}
+
+.right-column {
+    width: 65%;
+    float: right;
+    padding-top: 1em;
+}
+
+/* Single centered columns */
+.single-center-column-fit {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.single-center-column-10 {
+    width: 10%;
+    margin: 0 auto;
+}
+
+.single-center-column-20 {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.single-center-column-30 {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.single-center-column-40 {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.single-center-column-50 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.single-center-column-80 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* make hr fancy */
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+/* make lists fancy */
+
+ul > li {
+    text-align: left !important;
+    font-size: 1.45rem;
+}
+
+li > p {
+    display: inline;
+}
+
+/* used in partial list to condense them */
+
+.pullup, .pullup1 {
+    margin-top: -1em
+}
+
+.pullup2 {
+    margin-top: -2em
+}
+
+.pullup3 {
+    margin-top: -3em
+}
+
+.pullup4 {
+    margin-top: -4em
+}
+
+/* style blockquote as note */
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+blockquote p {
+    display: inline;
+}
+
+/* show shopware footer */
+
+.remark-slide-content.footer:after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2.26rem;
+    width: 100%;
+
+    content: "";
+    text-align: left;
+    vertical-align: middle;
+    padding-top: 0.3rem;
+
+    background-image: url(/svg/footer-text.svg);
+    background-color: #199eff;
+    background-repeat: no-repeat;
+    background-size: auto 2.26rem, auto 2.26rem;
+    background-position: left center;
+}
+
+/* show slide numbers in footer */
+.remark-slide-number {
+    z-index: 50;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    bottom: 0.8em;
+    right: 0.8em;
+    color: white;
+    opacity: initial;
+}
+
+/* Animations */
+.remark-fading {
+    z-index: 9;
+}
+
+.remark-slide-container {
+    transition: opacity 0.25s linear;
+    opacity: 0;
+}
+
+.remark-visible {
+    transition: opacity 0.25s linear;
+    opacity: 1;
+}
+
+.remark-preview-area > .remark-slide-container { /* fix preview visibility */
+    transition: none;
+    opacity: 1;
+}
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+class: center, middle, main-title
+
+# CSS Guidelines
+
+---
+## CSS Syntax
+```
+.myclass { // Selector
+    background-color: red; // (Declaration) property: value;
+}
+
+```
+
+---
+## CSS Specificity
+
+- Not commonly understood.
+- Actually relatively simple.
+- The selector with the highest specificity wins.
+
+
+---
+### Specificity examples
+```
+                /* ids=a classes=b elements=c       */
+LI              /* a=0 b=0 c=1 -> specificity =   1 */
+UL LI           /* a=0 b=0 c=2 -> specificity =   2 */
+UL OL+LI        /* a=0 b=0 c=3 -> specificity =   3 */
+H1 + *[REL=up]  /* a=0 b=1 c=1 -> specificity =  11 */
+UL OL LI.red    /* a=0 b=1 c=3 -> specificity =  13 */
+LI.red.level    /* a=0 b=2 c=1 -> specificity =  21 */
+#x34y           /* a=1 b=0 c=0 -> specificity = 100 */
+#s12:not(FOO)   /* a=1 b=0 c=1 -> specificity = 101 */
+
+```
+
+---
+### !important
+
+- A trump card for individual declarations inside selectors.
+- Automatically &quot;wins&quot; over any level of specificity.
+- When multiple `!important`s are found in the same cascade, specificity applies again.
+- Can be useful, but on the whole it is best to avoid using this where possible.
+
+
+---
+### !important examples
+```
+LI.special.heading { /* a=0 b=2 c=1 -> specificity =  21 */
+  color: black;
+}
+
+LI { /* a=0 b=2 c=1 -> specificity =  1 */
+  color: red !important; /* specificity =  1 !important */
+}
+
+LI.special { /* a=0 b=2 c=1 -> specificity =  11 */
+  color: blue !important; /* specificity =  11 !important */
+}
+
+```
+
+---
+class: center, middle, title
+
+## CSS advice
+
+---
+### Use a CSS normalize
+Browsers have a built in `user agent` stylesheet which are not standardised and differ between browsers. You should use a CSS normalize to fix these inconsistencies and set some useful defaults. Use a template such as [Modern normalize](https://github.com/sindresorhus/modern-normalize) and extend it to your own needs.
+
+
+- Set `box-sizing: border-box` to all elements. [Why?](https://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+- Fixes some known bugs (usually in IOS safari)
+- Set up some useful defaults for typography
+- Set some defaults for form elements
+- Only work on the low specificity elements here: no classes
+
+
+---
+### Keep specificity low
+
+- Rely on the sensible defaults you set for common elements
+- Where possible, only use classes
+- When specificity rises, your ability to maintain the CSS dimishes
+
+
+---
+### Low specificity example
+```
+a { /* Specificity of 1 */
+    color: blue;
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.link-special { /* Specificity of 10 */
+    color: red;
+    text-decoration: none;
+}
+```
+All links now have a default style, with an optional class for special links.
+
+
+---
+### Low specificity example continued...
+```
+h1 a { /* Specificity of 2 */
+    color: black;
+    text-decoration: none;
+}
+
+h1 a.link-special { /* Specificity of 12 */
+    color: pink;
+}
+```
+All links that are inside a `h1` have a special style, and our special links are handled differently for `h1` elements.
+
+
+---
+### High specificity example
+```
+a#title { /* Specificity of 101 */
+    color: black;
+    text-decoration: none;
+}
+
+.link-special { /* Specificity of 10 */
+    color: red;
+}
+```
+Our `.link-special` class will not apply it&#39;s `color` to this element. We&#39;re running into problems due to high specificity.
+
+
+---
+### High specificity to limit scope
+```
+<div id="my-extension">
+    <p>Why not try <a href="http://google.com">google</a>?</p>
+</div>
+
+<style>
+    #my-extension p { /* Specificity of 101 */
+        font: 'ms comic sans'
+    }
+
+    #my-extension a { /* Specificity of 101 */
+        color: blue;
+        font-weight: 800;
+    }
+</style>
+```
+Sometimes high specificity is useful. This example prevents styles &quot;leaking&quot; from the element with the id `my-extension`.
+
+
+---
+### Use OOCSS for generic elements
+
+- Object oriented CSS
+- Seperate structure from skin
+- Separate container and content
+- Keep classes discreet, encapsulated
+- Single responsibility principle
+
+
+---
+### Non OOCSS example
+```
+#sidebar h3 {  /* Specificity of 101 */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  color: #777;
+}
+
+#footer h3 {  /* Specificity of 101 */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1;
+  color: #777;
+}
+```
+We&#39;re repeating CSS declarations here. We&#39;re defining our `h3` elements relative to their parent container. this increases specificity. A more elegant and maintanable solution would be to...
+
+
+---
+### OOCSS example
+```
+h3 { /* Specificity of 1 */
+    font-size: 2em;
+    line-height: 1;
+    color: #777;
+}
+
+.heading-small { /* Specificity of 10 */
+    font-size: 1em;
+}
+```
+Each of our CSS declarations now have a single responsiblity, and naked `h3` elements now have a consistent appearance, with optional classes for use where required.
+
+
+---
+### Use BEM for discreet components
+
+- BEM is useful for areas of the page that are unique organisms
+- The single responsibility principle found in OOCSS also applies to BEM
+- We can still rely on our generic styles for elements
+- We can override our generic styles easily because specificity is low
+- BEM stands for Block, Element, Modifier
+- `[block]__[element]--[modifier]`
+
+
+---
+### BEM element example
+```
+<section class="media">
+  <img class="media__item" src="me.jpg">
+  <p class="media__description">Look at me!</p>
+</figure>
+
+<style>
+  .media { } /* Specificity of 10 */
+  .media__item { } /* Specificity of 10 */
+  .media__description { } /* Specificity of 10 */
+</style>
+```
+From the naming convention, we can see that the intention of the element class `.media__item` is that it &#39;belongs&#39; to the block class parent `.media`.
+
+
+---
+### BEM Modifer example
+```
+<section class="media media--large">
+  <img class="media__item media__item--framed" src="me.jpg">
+</section>
+
+<style>
+  .media { } /* Specificity of 10 */
+  .media--large { } /* Specificity of 10 */
+  .media__item--framed { } /* Specificity of 10 */
+</style>
+```
+From the naming convention, we can see that the intention of the modifier class `.media--large` is that it &#39;belongs&#39; to the block class parent `.media`. `.media__item--framed` &#39;belongs&#39; to the element class parent `.media__item`
+
+
+---
+### Use SCSS instead of CSS
+
+- Writing CSS is static, you can&#39;t use code to automate it
+- CSS is hard to maintain
+- CSS involves repetition
+- SCSS helps with all these issues
+
+
+---
+### Variables
+```
+$colour-brand-primary: #3D8C61;
+
+.button {
+    border: 1px solid $colour-brand-primary;
+}
+
+a {
+    color: $colour-brand-primary;
+}
+```
+Without these variables, changing a brand colour would involve find/replace.
+
+
+---
+### Placeholders
+```
+%list-inline {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        margin-right: 1em;
+    }
+}
+
+.breadcrumb,
+.navigation {
+    @extend %list-inline;
+}
+```
+Our compiled CSS will still contain this repetition, but it doesn&#39;t mean we have to have bloated SCSS files to deal with. We can store repeated CSS declarations as placeholders.
+
+
+---
+### Mixins
+```
+@mixin svg-inline(colour: $colour-text, $width: 1em) {
+    svg {
+        width: $width;
+
+        path {
+            fill: $colour;
+        }
+    }
+}
+
+.logo {
+    @include svg-inline($colour-ui-icon, 200px, 50px);
+}
+```
+Mixins accept variables and return CSS.
+
+
+---
+### Nesting
+```
+#my-extension {
+    p {
+        font: 'ms comic sans'
+    }
+
+    a {
+        color: blue;
+        font-weight: 800;
+    }
+}
+
+/* CSS outputs: */
+#my-extension a { }
+#my-extension p { }
+```
+Nesting allows you to see the structure of the SCSS better, and avoid repetition in the SCSS that you write.
+
+
+---
+### Colour functions
+```
+$colour-ui-link: #0A8045;
+$colour-ui-link-hover: darken($colour-ui-link, 10%);
+```
+Manipulate colours.
+
+
+---
+### Maths
+```
+$grid-gutter-half: $font-size-base;
+$grid-gutter-full: ($grid-gutter-half * 2);
+```
+Use Maths to calculate CSS properties relative to each other.
+
+
+---
+### Functions
+```
+// Convert a hex color value to a format safe to use in data-uri
+@function url-friendly-colour($colour) {
+    @return '%23' + str-slice('#{$colour}', 2, -1)
+}
+```
+Automate common manual tasks, such as string formatting.
+
+
+---
+### Use seperate SCSS files
+```
+scss
+  - atoms
+    - typography.scss
+    - buttons.scss
+    - forms.scss
+  - molecules
+    - tables.scss
+    - sections.scss
+```
+
+---
+### Build a CSS file from all these seperate SCSS files
+```
+node-sass-chokidar --precision 8 --output-style compressed source/stylesheets/notbootstrap.scss build/stylesheets/notbootstrap.css
+```
+This is an example of an [npm package](https://github.com/michaelwayman/node-sass-chokidar) that will compile `notbootstrap.scss` into `notbootstrap.css`. `notbootstrap.scss` itself contains `@import`ed SCSS files:
+
+```
+@import 'core/variables';
+@import 'core/reset';
+@import 'core/functions';
+@import 'core/mixins';
+@import 'core/placeholders';
+@import 'core/scaffolding';
+```
+
+---
+### Recap
+
+- Understand Specificity
+- Understand !important
+- Use a CSS normalize
+- Keep specificity low
+- Use OOCSS for generic elements
+- Use BEM for discreet components
+- Use SCSS instead of CSS
+
+
+---
+### Final thoughts
+
+- Treat SCSS and the compiled CSS with as much care as you do JavaScript or Python, or anything else, and certainly not as an afterthought
+- Don&#39;t write CSS, write SCSS
+- Keep your SCSS minimal, maintainable, and understandable
+- Understand and use the principles of OOCSS, BEM and low specificity
+- Write comments in your SCSS and convert them [automatically to a styleguide](https://github.com/kss-node/kss-node)
+
+
+---
+### This presentation
+
+- This presentation is written in markdown and converted to a slideshow presentation via [remark.js](https://lendmeyourear.net/posts/presentations-from-markdown-with-remark-js/)
+
+
+		</textarea>
+		<script src="//remarkjs.com/downloads/remark-latest.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+		</script>
+		<script></script>
+	</body>
+</html>
